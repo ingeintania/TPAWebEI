@@ -1,0 +1,132 @@
+<div class="product-widget">
+    <div class="product-list-container">
+        <div class="product-list-title">
+            <div>Hey Kamu</div>
+            <br>
+            <div class="bold-title">Mau Kemana?</div>
+        </div>
+        <div class="product-list-content">
+            <label mat-raised-button (click)="openDialog1()">
+                <div class="product-box">
+                    <div class="product-logo">
+                        <img src="https://static.tiket.photos/image/upload/v1557286163/home/2019/05/08/26bd8ca1-ade5-4e88-81b2-155a1adc9c28ef1e6febe0de3a16473c2eade2dcd594.png"
+                            alt="Pesawat">
+                    </div>
+                    <div class="product-label">Pesawat</div>
+                </div>
+            </label>
+            <label>
+                <div class="product-box">
+                    <div class="product-logo">
+                        <img src="https://static.tiket.photos/image/upload/v1557286168/home/2019/05/08/eb09df0d-cd12-40a7-87db-cbfd00763102932d166eeacc1b9424a1316c3c534caf.png"
+                            alt="Hotel">
+                    </div>
+                    <div class="product-label">Hotel</div>
+                </div>
+            </label>
+            <label>
+                <div class="product-box">
+                    <div class="product-logo">
+                        <img src="https://static.tiket.photos/image/upload/v1557286173/home/2019/05/08/45c710d9-09d6-415c-adbb-d6f8b2b25af8f81ecaf6efad743ffc5fef90f7fb4b3b.png"
+                            alt="Kereta Api">
+                    </div>
+                    <div class="product-label">Kereta Api</div>
+                </div>
+            </label>
+            <label mat-raised-button (click)="openDialog3()">
+                <div class="product-box">
+                    <div class="product-logo">
+                        <img src="https://static.tiket.photos/image/upload/v1557286179/home/2019/05/08/a6c4f246-dfca-46a9-854f-1de3b335154c6ddcc7deff47236b8a7de644d285242d.png"
+                            alt="Sewa Mobil">
+                    </div>
+                    <div class="product-label">Sewa Mobil</div>
+                </div>
+            </label>
+            <label>
+                <div class="product-box">
+                    <div class="product-logo">
+                        <img src="https://static.tiket.photos/image/upload/v1557286184/home/2019/05/08/b991ef35-fc71-4ba8-8106-7b0fa6feb833972827d56e08c88565dadd62aa91e438.png"
+                            alt="Entertainment">
+                    </div>
+                    <div class="product-label">Entertainment</div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="product-form">
+        <div class="product-form-header-group">
+            <div class="product-form-header-top">
+                <img src="https://static.tiket.photos/image/upload/v1557286168/home/2019/05/08/eb09df0d-cd12-40a7-87db-cbfd00763102932d166eeacc1b9424a1316c3c534caf.png"
+                            alt="Hotel">
+                <span class="product-form-subtitle">Booking Hotel Murah Online dengan Harga Promo</span>
+                <label class="product-form-last-search">
+                    <span class="form-last-search-text">Pencarian Terakhir  ></span>
+                </label>
+            </div>
+            <br>
+            <!-- <div class="product-form-header-bottom">
+                <div class="product-form-hotel-type">
+                    <div class="radiov3">
+                        <input type="radio" id="oneWay" name="hotelType" tabindex="-1">
+                        <label
+                            for="oneWay">Sekali Jalan
+                        </label>
+                    </div>
+                </div>
+                <div class="product-form-hotel-type">
+                    <div class="radiov3">
+                        <input type="radio" id="roundTrip" name="hotelType" tabindex="-1" checked="">
+                        <label for="roundTrip">Pulang-Pergi</label>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="product-form-search-group">
+            <div class="widget-date-input-group-container">
+                <div class="widget-input-container">
+                    <label class="product-search-input-label">Tujuan</label>
+                    <div class="product-search-input-container">
+                        <input type="text" name="tujuan" id="tujuan" placeholder="Mau nginep ke mana?">
+                    </div>
+                </div>
+            </div>
+            <div class="widget-date-input-group-container">
+                <div class="widget-input-container">
+                    <label class="product-search-input-label">Check-in</label>
+                    <div class="product-search-input-container">
+                        <input type="date" name="dateBerangkat" id="dateBerangkat">
+                    </div>
+                </div>
+            </div>
+            <div class="widget-date-input-group-container">
+                <div class="widget-input-container">
+                    <label class="product-search-input-label">Check-out</label>
+                    <div class="product-search-input-container">
+                        <input type="date" name="datePulang" id="datePulang">
+                    </div>
+                </div>
+            </div>
+            <div class="widget-hotel-passenger-cabin" id="passengerCabin">
+                <div class="widget-input-container">
+                    <label class="product-search-input-label"
+                        for="productSearchPassengerCabin">Tamu &amp; Kamar
+                    </label>
+                    <div class="product-search-input-container">
+                        <div class="custom-select">
+                            <select id="pkabin">
+                              <option value="0">1 Tamu, 1 Kamar</option>
+                              <option value="1">2 Tamu, 1 Kamar</option>
+                              <option value="2">2 Tamu, 2 Kamar</option>
+                              <option value="3">3 Tamu, 3 Kamar</option>
+                            </select>
+                          </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="product-form-container product-form-button-group">
+            <button class="product-form-search-btn" [routerLink]="['/hotel']" routerLinkActive="router-link-active" >CARI HOTEL</button>
+        </div>
+    </div>
+</div>

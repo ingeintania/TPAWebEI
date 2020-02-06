@@ -1,0 +1,75 @@
+
+    <div class="header-top">
+        <div class="header-container">
+            <div class="header-left-side">
+                <div class="featured-link">
+                    <a href="https://www.tiket.com/mobile-apps">Unduh Aplikasi tiket.com</a>
+                </div>
+                <div class="featured-link">
+                    <a href="">Promo</a>
+                </div>
+                <div class="featured-link">
+                    <a href="">Pusat Bantuan</a>
+                </div>              
+            </div>
+            <div class="header-right-side">
+                <div class="header-language">
+                    <div class="current-language">
+                        <span class="language-flag">
+                            <img src="https://www.tiket.com/home-ms/assets/id-flag.png" alt="">
+                        </span>
+                        <span class="toggle">
+                            <i class="tix">v</i>
+                        </span>
+                    </div>
+                </div>
+                <div class="header-currency">
+                    <div class="current-currency">
+                        <span class="currency-code">
+                            IDR
+                        </span>
+                        <span class="toggle">
+                            <i class="tix">v</i>
+                        </span>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="header-container">
+            <div class="header-left-side">
+                <div class="header-logo">
+                    <a [routerLink]="['/']" routerLinkActive="router-link-active" >
+                        <img src="https://static.tiket.photos/image/upload/v1576229034/logo/2019/12/13/9ac66782-b53a-415f-8e50-34ea899d5f8c-1576229031908-04e9e567dc74230fa9929c5ffe3f6fd0.png" alt="">
+                    </a>
+                </div>
+                <div class="header-product">
+                    <div class="header-product-link">
+                        <a [routerLink]="['/aeroplane']" routerLinkActive="router-link-active">Pesawat</a>
+                    </div>
+                    <div class="header-product-link">
+                        <a [routerLink]="['/hotel']" routerLinkActive="router-link-active" >Hotel</a>
+                    </div>
+                    <div class="header-product-link">
+                        <a [routerLink]="['/train']" routerLinkActive="router-link-active">Kereta Api</a>
+                    </div>
+                    <div class="header-product-link">
+                        <a [routerLink]="['/rentcar']" routerLinkActive="router-link-active">Sewa Mobil</a>
+                    </div>
+                    <div class="header-product-link">
+                        <a [routerLink]="['/entertainment']" routerLinkActive="router-link-active">Hiburan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right-side">
+                <a href="" class="header-right-item">Tix Point</a>
+                <a href="" class="header-right-item">Cek Order</a>
+                <label class="header-right-item" mat-raised-button (click)="openDialog()">Login</label>
+                <label class="header-register-item" mat-raised-button (click)="openDialog()">Daftar</label>
+            </div>
+        </div>
+    </div>
+

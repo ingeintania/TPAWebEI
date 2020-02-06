@@ -1,0 +1,159 @@
+
+    .product-widget{
+        margin: 1%;
+        border-bottom-left-radius:8px;
+        border-bottom-right-radius:8px;
+        border-top-left-radius:8px;
+        border-top-right-radius:8px;
+        box-shadow:rgba(53, 64, 90, 0.2) 0px 10px 20px 0px;
+        display:block;
+        font-family:OpenSans-Regular;
+        height:450px;
+        line-height:18.4px;
+        margin-bottom:0px;
+        outline-color:rgb(0, 0, 0);
+        outline-style:none;
+        outline-width:0px;
+        position:relative;
+        text-size-adjust:100%;
+        // z-index:-1;
+        // position: relative;
+        .product-list-container{
+            background-color:rgb(246, 249, 255);
+            border-top-left-radius:8px;
+            border-top-right-radius:8px;
+            padding-bottom:2%;
+            padding-left:5%;
+            padding-right:5%;
+            padding-top:2%;
+            .product-list-title{
+                color:rgb(53, 64, 90);
+                display:inline-block;
+                font-size:20px;
+                vertical-align:baseline;
+                .bold-title{
+                    color:rgb(53, 64, 90);
+                    font-family:OpenSans-SemiBold;
+                    font-size:35px;
+                    text-size-adjust:100%;
+                    vertical-align:bottom;
+                }
+            }
+            .product-list-content{
+                float:right;
+                white-space:nowrap;
+                margin-right: 10%;
+                label{
+                    z-index: 20;
+                    .product-box{
+                        border-radius: 8px;
+                        width: 20%;
+                        height:20%;
+                        stroke-width: 10%;
+                        stroke: black;
+                        cursor:pointer;
+                        display:inline-block;
+                        margin-right: 10%;
+                        .product-logo{
+                            cursor:pointer;
+                            // margin-right: -10%;
+                            img{
+                                cursor:pointer;
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+                
+                .product-label{
+                    text-align: justify;
+                    text-align-last: center;
+                }
+            }
+        }
+    }
+    .product-form{
+        .product-form-header-group{
+            .product-form-header-top{
+                display: flex;
+                // float: right;
+                padding-left: 5%;
+                padding-right: 5%;
+                padding-top: 2%;
+                img{
+                     width: 50px;
+                     height: 50px;
+                }
+                span.product-form-subtitle{
+                    margin: 1%;
+                    font-size: 20px;
+                    margin-right: 60%;;
+                    display:inline-block;
+                    vertical-align:baseline;
+                }
+                label.product-form-last-search{
+                    font-size: 15px;
+                    display: flex;
+                    justify-content: end;
+                    // margin-left: 30%;
+                    color: rgb(0, 154, 255);
+                    float:right;
+                    white-space:nowrap;
+                    // margin-right: 10%;
+                }
+            }
+            .product-form-header-bottom{
+                padding-left: 5%;
+                padding-right: 5%;
+                display: flex;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                .product-form-flight-type{
+                    margin-right: 2%;
+                }
+            }
+        }
+        .product-form-search-group{
+            display: flex;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            height: 100%;
+            width: 100%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            .widget-date-input-group-container{
+                margin-right: 3%;
+                padding-left: 5%;
+                .widget-input-container{
+                    .product-search-input-container{
+                        input{
+                            border: none;
+                            width:150%;
+                            height:200%;
+                            margin-top: 2%;
+                        }
+                        .custom-select{
+                            margin-top: 2%;
+                            #pkabin{
+                                width: 100px;
+                                height: 40px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .product-form-button-group{
+            margin-top: 2%;
+            margin-right: 5%;
+            button{
+                border-radius: 40px;
+                background-color: yellow;
+                width: 294px;
+                height: 40px;
+                border:none;
+                float: right;
+            }
+        }
+    }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div class="title">
+      <label for="" mat-raised-button (click)="closeDialog()"><</label>
+      <h2>Daftar</h2>
+    </div>
+    <div class="formLogin">
+      <!-- <form action=""> -->
+        <div>Email</div>
+        <div>
+          <label for="">Kosong</label>
+        </div>
+        <input type="text" name="namadepan" id="namadepan" placeholder="Nama Depan">
+        <input type="text" name="namabelakang" id="namabelakang" placeholder="Nama Belakang">
+        <div class="telp">
+          <div class="custom-select">
+            <select id="kodenegara">
+              <option value="0">+62</option>
+              <option value="1">+61</option>
+              <option value="2">+673</option>
+              <option value="3">+63</option>
+              <option value="4">+60</option>
+              <option value="5">+64</option>
+            </select>
+          </div>
+          <input type="text" name="nomorponsel" id="nomorponsel" placeholder="Nomor Ponsel">
+        </div>
+        <input type="password" name="katasandi" id="katasandi" placeholder="Kata Sandi">
+        <div class="txtCenter"><span>Min. 7 karakter dengan kombinasi antara angka, simbol, & huruf kapital.</span></div>
+        <button type="submit"mat-raised-button (click)="openDialog()">BUAT AKUN</button>
+      <!-- </form> -->
+    </div>
+  </div>
+  
+</body>
+</html>

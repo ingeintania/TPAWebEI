@@ -1,0 +1,31 @@
+.searchResult{
+    .searchResultContainer{
+        padding: 2%;
+        display: flex;
+        // justify-content: flex-start;
+        .box-left{
+            padding: 2%;
+            margin-right: 5%;
+            border-right: 1px solid lightgray;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            color: grey;
+        }
+        .box-middle{
+            padding: 2%;
+            // border-right: 1px solid lightgray;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .box-right{
+            padding: 2%;
+            display: flex;
+            justify-content: flex-end;
+            color: blue($color: #000000);
+        }
+    }
+}

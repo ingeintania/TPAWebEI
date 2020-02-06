@@ -1,0 +1,135 @@
+
+    .product-widget{
+        // margin: 1%;
+        display:block;
+        font-family:OpenSans-Regular;
+        // height:450px;
+        .product-list-container{
+            padding-bottom:2%;
+            padding-top:2%;
+            .product-list-title{
+                color:rgb(53, 64, 90);
+                display:inline-block;
+                font-size:20px;
+                .bold-title{
+                    color:rgb(53, 64, 90);
+                    font-family:OpenSans-SemiBold;
+                    font-size:35px;
+                    text-size-adjust:100%;
+                }
+            }
+            .product-list-content{
+                float:right;
+                label{
+                    z-index: 20;
+                    .product-box{
+                        border-radius: 8px;
+                        width: 20%;
+                        height:20%;
+                        stroke-width: 10%;
+                        stroke: black;
+                        cursor:pointer;
+                        display:inline-block;
+                        // margin-right: 5%;
+                        .product-logo{
+                            cursor:pointer;
+                            // margin-right: -10%;
+                            img{
+                                cursor:pointer;
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+                
+                .product-label{
+                    text-align: justify;
+                    text-align-last: center;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    .product-form{
+        border-top: 1px solid lightgray;
+        height: 100%;
+        width: 100%;
+        .product-form-header-group{
+            .product-form-header-top{
+                display: flex;
+                // float: right;
+                
+                padding-top: 2%;
+                img{
+                     width: 50px;
+                     height: 50px;
+                }
+                span.product-form-subtitle{
+                    margin: 1%;
+                    font-size: 19px;
+                    margin-right: 20%;;
+                    display:inline-block;
+                    vertical-align:baseline;
+                }
+                label.product-form-last-search{
+                    font-size: 15px;
+                    display: flex;
+                    justify-content: end;
+                    color: rgb(0, 154, 255);
+                    float:right;
+                    white-space:nowrap;
+                }
+            }
+            .product-form-header-bottom{
+                
+                display: flex;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                .product-form-flight-type{
+                    margin-right: 2%;
+                }
+            }
+        }
+        .product-form-search-group{
+            display: flex;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            height: 100%;
+            width: 100%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            .widget-date-input-group-container{
+                margin-right: 3%;
+                .widget-input-container{
+                    .product-search-input-container{
+                        input{
+                            border: none;
+                            width:150%;
+                            height:200%;
+                            margin-top: 2%;
+                        }
+                        .custom-select{
+                            margin-top: 2%;
+                            #pkabin{
+                                width: 50px;
+                                height: 40px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .product-form-button-group{
+            margin-top: 2%;
+            margin-right: 2%;
+            button{
+                border-radius: 40px;
+                background-color: yellow;
+                width: 294px;
+                height: 40px;
+                border:none;
+                float: right;
+            }
+        }
+    }

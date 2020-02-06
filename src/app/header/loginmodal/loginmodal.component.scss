@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    width: 300px;
+    height: 400px;
+    .txtCenter{
+        margin-top: 5%;
+        text-align: center;
+        span{
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+    .formLogin{
+        margin-top: 5%;
+        text-align: center;
+        #telp{
+            width: 294px;
+            height: 40px;
+        }
+        button{
+            margin-top: 5%;
+            border-radius: 40px;
+            background-color: yellow;
+            width: 294px;
+            height: 40px;
+            border:none;
+        }
+        
+        
+    }
+    .eLogin{
+        margin-top: 5%;
+        border-radius: 10px;
+        border:grey;
+        span{
+            margin-left: 2%;
+        }
+        #ggl{
+            margin-top: 2%;
+            border-radius: 40px;
+            width: 294px;
+            height: 40px;
+            border:none;
+            background-color: darkred;
+            color: white;
+        }
+        #fb{
+            margin-top: 2%;
+            border-radius: 40px;
+            width: 294px;
+            height: 40px;
+            border:none;
+            background-color: royalblue;
+            color: white;
+        }
+    }
+}

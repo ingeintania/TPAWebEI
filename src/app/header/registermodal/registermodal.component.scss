@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    width: 300px;
+    height: 450px;
+    div{
+        .title{
+            label{
+                display: inline-block;
+                color: rgb(0, 154, 255);
+                margin-right: 3%;
+                font-size: 28px;
+            }
+            h2{
+                display: inline-block;
+            }
+        }
+        .formLogin{
+            margin-top: 3%;
+            display: block;
+            
+            div{
+                margin-top: 3%;
+            }
+            label{
+                margin-top: 3%;
+            }
+            #namadepan{
+                width: 294px;
+                height: 40px;
+                margin-top: 3%;
+            }
+            #namabelakang{
+                width: 294px;
+                height: 40px;
+                margin-top: 3%;
+            }
+            .telp{
+                display: flex;
+                .custom-select{
+                    margin-right: 3%;
+                    margin-top: 2%;
+                    #kodenegara{
+                        width: 100px;
+                        height: 40px;
+                        
+                    }
+                }
+                #nomorponsel{
+                    width: 190px;
+                    height: 40px;
+                    margin-top: 2%;
+                }
+            }
+            #katasandi{
+                width: 294px;
+                height: 40px;
+                margin-top: 3%;
+            }
+            .txtCenter{
+                margin-top: 1%;
+                span{
+                    text-align: center;
+                    font-size: 10px;
+                }
+            }
+            button{
+                margin-top: 3%;
+                border-radius: 40px;
+                background-color: yellow;
+                width: 294px;
+                height: 40px;
+                border:none;
+            }
+            
+        }
+
+    }
+    
+}
