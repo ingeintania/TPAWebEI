@@ -1,1 +1,327 @@
-<p>train works!</p>
+<div class="hotel-list">
+    <div class="hotel-list-top">
+        <div class="searchResult">
+            <div class="searchResultContainer">
+                <div class="product-form-search-group">
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Dari</label>
+                            <div class="product-search-input-container">
+                                <input type="text" name="dari" id="dari" placeholder="Dari mana?" [(ngModel)]="dari">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Ke</label>
+                            <div class="product-search-input-container">
+                              <input type="text" name="ke" id="ke" placeholder="Mau kemana?" [(ngModel)]="ke">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Pergi </label>
+                            <div class="product-search-input-container">
+                                <!-- <input type="date" name="datePulang" id="datePulang" [(ngModel)]="pergi"> -->
+                                <input matInput [matDatepicker]="pickerBerangkat" name="dateBerangkat" id="dateBerangkat" placeholder="Pilih Tanggal">
+                                <mat-datepicker-toggle matSuffix [for]="pickerBerangkat"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerBerangkat></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-hotel-passenger-cabin" id="passengerCabin">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label" for="productSearchPassengerCabin">
+                              Penumpang
+                            </label>
+                            <div class="product-search-input-container">
+                              <input type="text" name="ke" id="ke" placeholder="Penumpang" [(ngModel)]="penumpang">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="product-form-search-btn"
+                        routerLinkActive="router-link-active">CARI KERETA</button>
+                </div>
+            </div>
+        </div>
+        <div class="filter-search" *ngIf="dari != null && ke!=null && pergi!=null && penumpang!=null">
+          <span>{{dari}} {{ke}} {{pergi}} {{penumpang}}</span>
+        </div>
+    </div>
+    <div class="hotel-list-container">
+        <div class="hotel-list-container-left">
+            <div class="hotel-list-container-left-content">
+              <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Kelas
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <div>
+                      <input type="radio" value="ekonomi" name="rbClass" [(ngModel)]="classes">Ekonomi
+                    </div>
+                    <div>
+                        <input type="radio" value="bisnis" name="rbClass" [(ngModel)]="classes">Bisnis
+                    </div>
+                    <div>
+                        <input type="radio" value="eksekutif" name="rbClass" [(ngModel)]="classes">Eksekutif
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+            </div>
+
+            <div class="hotel-list-container-left-content">
+              <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Waktu
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <div>
+                      Berangkat
+                    </div>
+                    <div>
+                      <input type="radio" value="01:00" name="rbDepart" [(ngModel)]="depart">01:00 - 06:00
+                    </div>
+                    <div>
+                        <input type="radio" value="07:00" name="rbDepart" [(ngModel)]="depart">07:00 - 12:00
+                    </div>
+                    <div>
+                        <input type="radio" value="13:00" name="rbDepart" [(ngModel)]="depart">13:00 - 18:00
+                    </div>
+                    <div>
+                      <input type="radio" value="19:00" name="rbDepart" [(ngModel)]="depart">19:00 - 00:00
+                  </div>
+                  <br>
+                  <div>
+                    Tiba
+                  </div>
+                  <div>
+                    <input type="radio" value="01:00" name="rbArrive" [(ngModel)]="arrive">10:00 - 03:00
+                  </div>
+                  <div>
+                      <input type="radio" value="04:00" name="rbArrive" [(ngModel)]="arrive">04:00 - 06:00
+                  </div>
+                  <div>
+                      <input type="radio" value="07:00" name="rbArrive" [(ngModel)]="arrive">07:00 - 09:00
+                  </div>
+                  <div>
+                    <input type="radio" value="10:00" name="rbArrive" [(ngModel)]="arrive">10:00 - 12:00
+                </div>
+                <div>
+                  <input type="radio" value="13:00" name="rbArrive" [(ngModel)]="arrive">13:00 - 15:00
+                </div>
+                <div>
+                    <input type="radio" value="16:00" name="rbArrive" [(ngModel)]="arrive">16:00 - 18:00
+                </div>
+                <div>
+                    <input type="radio" value="19:00" name="rbArrive" [(ngModel)]="arrive">19:00 - 21:00
+                </div>
+                <div>
+                  <input type="radio" value="22:00" name="rbArrive" [(ngModel)]="arrive">22:00 - 00:00
+              </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+            </div>
+            <div class="hotel-list-container-left-content">
+              <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Tipe
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <div>
+                      <input type="radio" value="otto parahyangan" name="rbClass" [(ngModel)]="types">Otto Parahyangan
+                    </div>
+                    <div>
+                      <input type="radio" value="mutiara selatan" name="rbClass" [(ngModel)]="types">Mutiara Selatan
+                    </div>
+                    <div>
+                      <input type="radio" value="kupu kupu rebana" name="rbClass" [(ngModel)]="types">Kupu Kupu Rebana
+                    </div>
+                    <div>
+                      <input type="radio" value="zender cahaya" name="rbClass" [(ngModel)]="types">Zender Cahaya
+                    </div>
+                    <!-- <div>
+                        <input type="radio" value="bisnis" name="rbClass" [(ngModel)]="classes">Bisnis
+                    </div>
+                    <div>
+                        <input type="radio" value="eksekutif" name="rbClass" [(ngModel)]="classes">Eksekutif
+                    </div> -->
+                </mat-expansion-panel>
+            </mat-accordion>
+            </div>
+            <!-- <div class="hotel-list-container-left-content">
+                <div>
+                    <input type="radio" value="ac" name="rbFacility" [(ngModel)]="facility">AC
+                </div>
+                <div>
+                    <input type="radio" value="lift" name="rbFacility" [(ngModel)]="facility">Lift
+                </div>
+                <div>
+                    <input type="radio" value="spa" name="rbFacility" [(ngModel)]="facility">Spa
+                </div>
+                <div>
+                    <input type="radio" value="wifi" name="rbFacility" [(ngModel)]="facility">WiFi
+                </div>
+                <div>
+                    <input type="radio" value="restoran" name="rbFacility" [(ngModel)]="facility">Restoran
+                </div>
+                <div>
+                    <input type="radio" value="parkir" name="rbFacility" [(ngModel)]="facility">Parkir
+                </div>
+            </div>
+            <div class="hotel-list-container-left-content">
+                Area
+            </div>
+            <div class="hotel-list-container-left-content">
+                <div>
+                    <input type="radio" value="seminyak" name="rbArea" [(ngModel)]="area">Seminyak
+                </div>
+                <div>
+                    <input type="radio" value="kuta" name="rbArea" [(ngModel)]="area">Kuta
+                </div>
+                <div>
+                    <input type="radio" value="nusa dua" name="rbArea" [(ngModel)]="area">Nusa Dua
+                </div>
+                <div>
+                    <input type="radio" value="legian" name="rbArea" [(ngModel)]="area">Legian
+                </div>
+            </div> -->
+            <div class="hotel-list-container-left-content">
+                <button (click)="reset()">RESET</button>
+            </div>
+        </div>
+        <div class="hotel-list-container-right">
+            <div class="hotel-filter-container">
+                <div class="dropdown">
+                  <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Detail Perjalanan
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <input type="radio" value="tipe" [(ngModel)]="sorted">Tipe Kereta
+                        <input type="radio" value="durasi" [(ngModel)]="sorted">Durasi Perjalanan
+                        <input type="radio" value="harga" [(ngModel)]="sorted">Harga
+                        <input type="radio" value="kelas" [(ngModel)]="sorted">Kelas
+                    </mat-expansion-panel>
+                </mat-accordion>
+                    <!-- <select id="pkabin">
+                        <option value="tipe" [(ngModel)]="sorted">Tipe Perjalanan</option>
+                        <option value="durasi" [(ngModel)]="sorted">Durasi Perjalanan</option>
+                        <option value="harga" [(ngModel)]="sorted">Harga</option>
+                        <option value="kelas" [(ngModel)]="sorted">Kelas</option>
+                    </select> -->
+                </div>
+            </div>
+            <div class="hotel-data-container" *ngFor="let train of trainData | train:dari:ke:classes:depart:arrive:types:sorted">
+                <div class="hotel-data">
+                    <div class="hotel-data-content">
+                        <div class="data-detail">
+                            <div class="ddt">
+                                <abbr title="{{train.train_type}}">{{train.train_type}}</abbr>
+
+                            </div>
+                            <div class="ddt">
+
+                                {{train.train_class}}
+                            </div>
+
+                        </div>
+                        <div class="data-detail">
+                            <div class="ddc">
+                                {{train.train_depart_time}}
+
+                            </div>
+                            <div class="ddc">
+
+                                {{train.train_depart_location}}
+                            </div>
+                        </div>
+                        <div class="data-detail">
+                            <div class="ddc">
+                                {{train.train_duration}} jam
+
+                            </div>
+                            <div class="ddc">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="data-detail">
+                            <div class="ddc">
+                                {{train.train_arrive_time}}
+
+                            </div>
+                            <div class="ddc">
+
+                                {{train.train_arrive_location}}
+                            </div>
+                        </div>
+                        <div class="data-detail">
+                            <div class="ddp">
+                                Rp{{train.train_detail_price}},-
+
+                            </div>
+                            <div class="ddp">
+                                <button (click)="success()">PILIH</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-data">
+                    <div class="hotel-data-content">
+                      <div class="data-detail">
+                        <mat-accordion>
+                          <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+                              <mat-expansion-panel-header>
+                                  <mat-panel-title>
+                                      Detail Perjalanan
+                                  </mat-panel-title>
+
+                              </mat-expansion-panel-header>
+                              <p>{{train.train_depart_time}} {{train.train_depart_location}}</p>
+                              <p>{{train.train_duration}} jam {{train.train_type}} ({{train.train_class}})</p>
+                              <p>{{train.train_arrive_time}} {{train.train_arrive_location}}</p>
+                          </mat-expansion-panel>
+                      </mat-accordion>
+                      </div>
+                      <div class="hotel-data-content">
+                        <div class="data-detail">
+                          <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Detail Harga
+                                    </mat-panel-title>
+
+                                </mat-expansion-panel-header>
+                                <p>TARIF</p>
+                                <p>{{train.train_type}} ({{train.train_class}}) - Rp{{train.train_detail_price}},-</p>
+                                <p>Pajak - Termasuk</p>
+                                <p>Biaya Layanan Penumpang - GRATIS</p>
+                                <p>TOTAL - Rp{{train.train_detail_price}},-</p>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,254 @@
-<p>rentcar works!</p>
+<div class="hotel-list">
+    <div class="hotel-list-top">
+        <div class="searchResult">
+            <div class="searchResultContainer">
+                <div class="product-form-search-group">
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Lokasi</label>
+                            <div class="product-search-input-container">
+                                <input type="text" name="place" id="place" placeholder="Mau pinjam di mana?" [(ngModel)]="place">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Check-in</label>
+                            <div class="product-search-input-container">
+                                <input matInput [matDatepicker]="pickerRent" name="dateRent" id="dateRent" [(ngModel)]="dateRent"
+                                placeholder="Pilih Tanggal">
+                                <mat-datepicker-toggle matSuffix [for]="pickerRent"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerRent></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Check-out</label>
+                            <div class="product-search-input-container">
+                              <input matInput [matDatepicker]="pickerBack" name="dateBack" id="dateBack" [(ngModel)]="dateBack"
+                              placeholder="Pilih Tanggal">
+                              <mat-datepicker-toggle matSuffix [for]="pickerBack"></mat-datepicker-toggle>
+                              <mat-datepicker #pickerBack></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-hotel-passenger-cabin" id="passengerCabin">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label"
+                                for="productSearchPassengerCabin">Jumlah Mobil
+                            </label>
+                            <div class="product-search-input-container">
+                              <input type="text" name="qty" id="qty" [(ngModel)]="qty">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="product-form-search-btn" (click)="searchData()">CARI MOBIL</button>
+                </div>
+            </div>
+        </div>
+        <div id="filter-search">
+          {{place}} {{dateRent}} {{dateBack}} {{qty}}
+        </div>
+    </div>
+    <div class="hotel-list-container">
+        <div class="hotel-list-container-left">
+          <div class="hotel-list-container-left-content">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                  (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          Kapasitas
+                      </mat-panel-title>
+
+                  </mat-expansion-panel-header>
+                  <div>
+                    <input type="radio" value="0" name="rbClass" [(ngModel)]="capacity">> 0
+                  </div>
+                  <div>
+                      <input type="radio" value="5" name="rbClass" [(ngModel)]="capacity">> 5
+                  </div>
+                  <span id="dotsCapacity"></span>
+                  <label for="" id="lblCapacity" (click)="rmCapacity()">Read More</label>
+                  <div id="rm-capacity">
+                    <div>
+                      <input type="radio" value="10" name="rbClass" [(ngModel)]="capacity">> 10
+                  </div>
+                  </div>
+              </mat-expansion-panel>
+          </mat-accordion>
+          </div>
+          <div class="hotel-list-container-left-content">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                  (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          Harga
+                      </mat-panel-title>
+
+                  </mat-expansion-panel-header>
+                  <input type="range" name="rangeInput" min="100000" max="500000" [(ngModel)]="price">
+                <div>
+                    <span>Rp100rb</span>
+                    <span>Rp500rb</span>
+                </div>
+              </mat-expansion-panel>
+          </mat-accordion>
+          </div>
+          <div class="hotel-list-container-left-content">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                  (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          Model
+                      </mat-panel-title>
+
+                  </mat-expansion-panel-header>
+                  <div>
+                    <input type="radio" value="daihatsu ayla" name="rbClass" [(ngModel)]="model">Daihatsu Ayla
+                  </div>
+                  <div>
+                    <input type="radio" value="toyota all new avanza" name="rbClass" [(ngModel)]="model">Toyota All New Avanza
+                  </div>
+                  <span id="dotsModel"></span>
+                  <label for="" id="lblModel" (click)="rmModel()">Read More</label>
+                  <div id="rm-model">
+                    <div>
+                      <input type="radio" value="suzuki apv" name="rbClass" [(ngModel)]="model">Suzuki APV
+                    </div>
+                    <div>
+                      <input type="radio" value="isuzu elf" name="rbClass" [(ngModel)]="model">Isuzu ELF
+                    </div>
+                  </div>
+
+
+
+                  <!-- <div>
+                    <input type="radio" value="suzuki apv" name="rbClass" [(ngModel)]="model">Suzuki APV
+                  </div>
+                  <div>
+                    <input type="radio" value="isuzu elf" name="rbClass" [(ngModel)]="model">Isuzu ELF
+                  </div> -->
+                  <!-- <div>
+                      <input type="radio" value="bisnis" name="rbClass" [(ngModel)]="classes">Bisnis
+                  </div>
+                  <div>
+                      <input type="radio" value="eksekutif" name="rbClass" [(ngModel)]="classes">Eksekutif
+                  </div> -->
+              </mat-expansion-panel>
+          </mat-accordion>
+          </div>
+          <div class="hotel-list-container-left-content">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                  (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          Brand
+                      </mat-panel-title>
+
+                  </mat-expansion-panel-header>
+                  <div>
+                    <input type="radio" value="daihatsu" name="rbClass" [(ngModel)]="brand">Daihatsu
+                  </div>
+                  <div>
+                    <input type="radio" value="toyota" name="rbClass" [(ngModel)]="brand">Toyota
+                  </div>
+                  <span id="dotsBrand"></span>
+                  <label for="" id="lblBrand" (click)="rmBrand()">Read More</label>
+                  <div id="rm-brand">
+                    <div>
+                      <input type="radio" value="suzuki" name="rbClass" [(ngModel)]="brand">Suzuki
+                    </div>
+                    <div>
+                      <input type="radio" value="elf" name="rbClass" [(ngModel)]="brand">Isuzu
+                    </div>
+                  </div>
+
+
+
+                  <!-- <div>
+                    <input type="radio" value="suzuki" name="rbClass" [(ngModel)]="brand">Suzuki
+                  </div>
+                  <div>
+                    <input type="radio" value="elf" name="rbClass" [(ngModel)]="brand">Isuzu
+                  </div> -->
+                  <!-- <div>
+                      <input type="radio" value="bisnis" name="rbClass" [(ngModel)]="classes">Bisnis
+                  </div>
+                  <div>
+                      <input type="radio" value="eksekutif" name="rbClass" [(ngModel)]="classes">Eksekutif
+                  </div> -->
+              </mat-expansion-panel>
+          </mat-accordion>
+          </div>
+            <div class="hotel-list-container-left-content">
+                <button (click)="reset()">RESET</button>
+            </div>
+        </div>
+        <div class="hotel-list-container-right">
+            <div class="hotel-filter-container">
+                <div class="dropdown">
+                  <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Detail Perjalanan
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <input type="radio" value="price" [(ngModel)]="sorted">Harga
+                        <input type="radio" value="model" [(ngModel)]="sorted">Model
+                        <input type="radio" value="capacity" [(ngModel)]="sorted">Kapasitas
+                    </mat-expansion-panel>
+                </mat-accordion>
+                </div>
+            </div>
+            <div class="hotel-data-container" *ngFor="let car of carK | carFilter:place:capacity:price:model:brand:sorted; let i = index" [attr.data-index]="i">
+                <div class="hotel-data">
+                    <img mat-card-image src="{{car.car_image_path}}" alt="">
+                    <div class="hotel-data-content">
+                        <div>
+                          <abbr title="{{car.car_model}}">
+                            {{car.car_model}}
+                          </abbr>
+                        </div>
+                        <div>
+                          Rp{{car.car_price}},-
+                        </div>
+                        <div class="ini-image">
+                          <img src="https://image.flaticon.com/icons/png/512/16/16363.png" alt="">
+                          <span> {{car.car_passenger}}   </span>
+                        <!-- </div>
+                        <div class="ini-image"> -->
+                          <img src="https://img.icons8.com/pastel-glyph/2x/suitcase.png" alt="">
+                          <span> {{car.car_luggage}}   </span>
+                        </div>
+                        <div>
+                          <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Detail Vendor
+                                    </mat-panel-title>
+
+                                </mat-expansion-panel-header>
+                                <p>{{car.car_vendor}}</p>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        </div>
+
+                    </div>
+                    <div class="hotel-data">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

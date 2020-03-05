@@ -1,0 +1,48 @@
+<div class="promo-page">
+    <div class="image-container">
+        <img mat-card-image src="{{promoData[3].promo_image_path}}" alt="">
+    </div>
+    <div class="promo-container">
+        <div class="promo-detail-container">
+            <mat-card-content class="content">
+                <h1>{{promoData[3].promo_title}}</h1>
+            </mat-card-content>
+            <mat-card-content class="content-button">
+                <share-button button="facebook">Facebook</share-button>
+                <share-button button="copy">Copy Link</share-button>
+                <share-button button="whatsapp">Email</share-button>
+            </mat-card-content>
+            <mat-card-content class="content">
+                {{promoData[3].promo_content}}
+            </mat-card-content>
+            <br>
+            <mat-card-content class="content">
+                Periode Promo :
+                {{promoData[3].promo_periode}}
+            </mat-card-content>
+            <br>
+            <mat-card-content class="content">
+                Kode Promo :
+                <h3>{{promoData[3].promo_category}}</h3>
+            </mat-card-content>
+        </div>
+        <div class="other-promo">
+            <div class="thumb" *ngFor="let promo of promoData">
+                <mat-card class="example-card" *ngIf="promo.promo_id > 1">
+                    <img mat-card-image src="{{promo.promo_image_path}}" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <!-- <abbr title="{{promo.promo_title}}"> -->
+                            <p>
+                                {{promo.promo_title}}
+                            </p>
+                        <!-- </abbr> -->
+                    </mat-card-content>
+                    <!-- <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions> -->
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

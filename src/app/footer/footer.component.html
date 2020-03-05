@@ -6,8 +6,8 @@
             </div>
             <div class="input-button">
                 <div class="subscribe">
-                    <input type="text" name="email" placeholder="Masukkan email Anda" value="">
-                    <button type="submit" name="subscribe_btn" value="1">Berlangganan</button>
+                    <input type="text" name="email" placeholder="Masukkan email Anda" [(ngModel)]="email">
+                    <button type="submit" name="subscribe_btn" (click)="subscribeEmail()">Berlangganan</button>
                 </div>
             </div>
         </div>
@@ -84,19 +84,19 @@
                 <div class="footer-list-title">Produk</div>
                 <div class="footer-list-contents">
                     <div class="footer-list-content">
-                        <a href="https://www.tiket.com/">Pesawat</a>
+                        <a [routerLink]="['/aeroplane']" routerLinkActive="router-link-active" >Pesawat</a>
                     </div>
                     <div class="footer-list-content">
-                        <a href="https://www.tiket.com/">Hotel</a>
+                        <a [routerLink]="['/hotel']" routerLinkActive="router-link-active" >Hotel</a>
                     </div>
                     <div class="footer-list-content">
-                        <a href="https://www.tiket.com/">Kereta Api</a>
+                        <a [routerLink]="['/train']" routerLinkActive="router-link-active" >Kereta Api</a>
                     </div>
                     <div class="footer-list-content">
-                        <a href="https://www.tiket.com/">Sewa Mobil</a>
+                        <a [routerLink]="['/rentcar']" routerLinkActive="router-link-active" >Sewa Mobil</a>
                     </div>
                     <div class="footer-list-content">
-                        <a href="https://www.tiket.com/">Hiburan</a>
+                        <a [routerLink]="['/entertainment']" routerLinkActive="router-link-active" >Hiburan</a>
                     </div>
                 </div>
             </div>

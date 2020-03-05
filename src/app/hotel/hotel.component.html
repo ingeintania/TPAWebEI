@@ -1,9 +1,254 @@
-<div class="row mt-5">
-    <div class="col-md-9 mx-auto">
-        <h2 class="text-left">Map</h2>
-        <div class="card mt-3">
-            <div class="card-body">
-                <div #mapRef style="width:100%;height:400px"></div>
+<div class="hotel-list">
+    <div class="hotel-list-top">
+        <div class="searchResult">
+            <div class="searchResultContainer">
+                <div class="product-form-search-group">
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Tujuan</label>
+                            <div class="product-search-input-container">
+                                <input type="text" name="tujuan" id="tujuan" placeholder="Mau nginep ke mana?" [(ngModel)]="tujuan">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Check-in</label>
+                            <div class="product-search-input-container">
+                              <!-- <mat-label>Pilih tanggal</mat-label> -->
+                              <input matInput [matDatepicker]="pickerBerangkat" name="checkIn" id="checkIn" [(ngModel)]="checkIn"
+                              placeholder="Pilih Tanggal">
+                              <mat-datepicker-toggle matSuffix [for]="pickerBerangkat"></mat-datepicker-toggle>
+                              <mat-datepicker #pickerBerangkat></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-date-input-group-container">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label">Check-out</label>
+                            <div class="product-search-input-container">
+                                <!-- <input type="date" name="datePulang" id="datePulang"> -->
+                                <input matInput [matDatepicker]="pickerPulang" name="checkOut" id="checkOut" [(ngModel)]="checkOut"
+                                placeholder="Pilih Tanggal">
+                              <mat-datepicker-toggle matSuffix [for]="pickerPulang"></mat-datepicker-toggle>
+                              <mat-datepicker #pickerPulang></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-hotel-passenger-cabin" id="passengerCabin">
+                        <div class="widget-input-container">
+                            <label class="product-search-input-label"
+                                for="productSearchPassengerCabin">Tamu &amp; Kamar
+                            </label>
+                            <div class="product-search-input-container">
+                                <input type="text" name="tujuan" id="tujuan" placeholder="Detail Booking" [(ngModel)]="detail">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="product-form-search-btn" (click)="searchHotel()" >CARI HOTEL</button>
+                </div>
+            </div>
+        </div>
+        <div id="filter-search">
+          {{tujuan}} {{checkIn}} {{checkOut}} {{detail}}
+        </div>
+    </div>
+    <div class="hotel-list-container">
+        <div class="hotel-list-container-left">
+            <div class="hotel-list-container-left-content">
+                <button [routerLink]="['/hotel-map']" routerLinkActive="router-link-active" >Tampilan Peta</button>
+            </div>
+            <div class="hotel-list-container-left-content">
+                <input type="text" class="form-control" placeholder="Cari Hotel..."
+                [(ngModel)]="searchTerm">
+            </div>
+            <div class="hotel-list-container-left-content">
+                Price
+            </div>
+            <div class="hotel-list-container-left-content">
+                <input type="range" name="rangeInput" min="100000" max="10000000" [(ngModel)]="price">
+                <div>
+                    <span>Rp100rb</span>
+                    <span>Rp10jt</span>
+                </div>
+            </div>
+            <div class="hotel-list-container-left-content">
+                Rating
+            </div>
+            <div class="hotel-list-container-left-content">
+                <div>
+                    <input type="radio" value="1" name="rbRating"
+                    [(ngModel)]="rating">More than 1
+                </div>
+                <div>
+                    <input type="radio" value="4" name="rbRating"
+                    [(ngModel)]="rating">More than 4
+                </div>
+                <span id="dotsRating"></span>
+                <label for="" id="lblRating" (click)="rmRating()">Read More</label>
+                <div id="rm-rating">
+                  <div>
+                    <input type="radio" value="7" name="rbRating"
+                    [(ngModel)]="rating">More than 7
+                </div>
+                </div>
+
+
+                <!-- <div>
+                    <input type="radio" value="7" name="rbRating"
+                    [(ngModel)]="rating">More than 7
+                </div> -->
+            </div>
+            <div class="hotel-list-container-left-content">
+                Facilities
+            </div>
+            <div class="hotel-list-container-left-content">
+                <div>
+                    <input type="radio" value="ac" name="rbFacility"
+                    [(ngModel)]="facility">AC
+                </div>
+                <div>
+                    <input type="radio" value="lift" name="rbFacility"
+                    [(ngModel)]="facility">Lift
+                </div>
+                <div>
+                    <input type="radio" value="spa" name="rbFacility"
+                    [(ngModel)]="facility">Spa
+                </div>
+                <span id="dots"></span>
+                <label for="" id="lblFacility" (click)="rmFacility()">Read More</label>
+                <div id="rm-facility">
+                  <div>
+                    <input type="radio" value="wifi" name="rbFacility"
+                    [(ngModel)]="facility">WiFi
+                  </div>
+                  <div>
+                      <input type="radio" value="restoran" name="rbFacility"
+                      [(ngModel)]="facility">Restoran
+                  </div>
+                  <div>
+                      <input type="radio" value="parkir" name="rbFacility"
+                      [(ngModel)]="facility">Parkir
+                  </div>
+                </div>
+            </div>
+            <div class="hotel-list-container-left-content">
+                Area
+            </div>
+            <div class="hotel-list-container-left-content">
+                <div>
+                    <input type="radio" value="seminyak" name="rbArea"
+                    [(ngModel)]="area">Seminyak
+                </div>
+                <div>
+                    <input type="radio" value="kuta" name="rbArea"
+                    [(ngModel)]="area">Kuta
+                </div>
+                <span id="dotsArea"></span>
+                <label for="" id="lblArea" (click)="rmArea()">Read More</label>
+                <div id="rm-area">
+                  <div>
+                    <input type="radio" value="nusa dua" name="rbArea"
+                    [(ngModel)]="area">Nusa Dua
+                </div>
+                <div>
+                    <input type="radio" value="legian" name="rbArea"
+                    [(ngModel)]="area">Legian
+                </div>
+                </div>
+              <div class="hotel-list-container-left-content">
+                  Tampilkan Harga Berdasarkan
+              </div>
+              <div class="hotel-list-container-left-content">
+                  <div>
+                      <input type="radio" value="total" name="rbFacility"
+                      [(ngModel)]="basedPrice" checked="checked" ng-checked="basedPrice==total">Total Harga
+                  </div>
+                  <div>
+                      <input type="radio" value="malam" name="rbFacility"
+                      [(ngModel)]="basedPrice" ng-checked="basedPrice==total">Harga Per Malam
+                  </div>
+
+
+              </div>
+
+
+
+
+                <!-- <div>
+                    <input type="radio" value="nusa dua" name="rbArea"
+                    [(ngModel)]="area">Nusa Dua
+                </div>
+                <div>
+                    <input type="radio" value="legian" name="rbArea"
+                    [(ngModel)]="area">Legian
+                </div> -->
+            </div>
+            <div class="hotel-list-container-left-content">
+                <button (click)="reset()">RESET</button>
+            </div>
+        </div>
+        <div class="hotel-list-container-right">
+            <div class="hotel-filter-container">
+                <div class="dropdown">
+                  <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Urutkan berdasarkan
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <input type="radio" value="rating" [(ngModel)]="sorted">Rating
+                        <input type="radio" value="price" [(ngModel)]="sorted">Harga
+                        <input type="radio" value="name" [(ngModel)]="sorted">Nama
+                    </mat-expansion-panel>
+                </mat-accordion>
+                </div>
+                <div class="dropdown">
+                  <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Tampilkan harga berdasarkan
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+                        <input type="radio" value="malam" [(ngModel)]="displayPrice">Harga Per Malam
+                        <input type="radio" value="total" [(ngModel)]="displayPrice">Total
+                    </mat-expansion-panel>
+                </mat-accordion>
+                </div>
+            </div>
+            <div class="hotel-data-container">
+              <div class="hotel-data" *ngFor="let hotel of (hotelData | hotelFilter:tujuan:searchTerm:rating:area:price:facility:sorted); let i = index" [attr.data-index]="i">
+                    <img src="{{hotel.hotel_image_path}}" alt="">
+                    <div class="hotel-data-content">
+                        <a [routerLink]="['/hotel', hotel.hotel_id]" routerLinkActive="router-link-active"  class="hotel_name">
+                            {{hotel.hotel_name}}
+                        </a>
+                        <div>
+                            {{hotel.hotel_address}}
+                        </div>
+                        <div>
+                            Rating : {{hotel.hotel_rating_count}}
+                        </div>
+                        <div *ngIf="displayPrice=='total'">
+                            Rp {{hotel.hotel_price}},-
+                        </div>
+                        <div *ngIf="displayPrice=='malam'">
+                          Rp {{hotel.location_id}},-
+                      </div>
+                        <div>
+                            Only {{hotel.location_id}} left!
+                        </div>
+                        <div>
+                            {{hotel.hotel_facilities}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

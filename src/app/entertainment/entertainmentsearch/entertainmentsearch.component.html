@@ -1,0 +1,154 @@
+<div class="home-slider">
+    <div class="slick-slider">
+        <div class="slick-list">
+            <div class="slick-list-content">
+                <img class="slider-image"
+                    src="https://static.tiket.photos/image/upload/v1576742047/banner/2019/12/19/53a5a323-1469-4041-9083-0238b1c2901d-1576742045870-6f9eee1cd97078e79b0c37f206146ed0.jpg"
+                    alt="Promo Pesawat Domestik">
+                <img class="slider-image"
+                    src="https://static.tiket.photos/image/upload/v1582279412/banner/2020/02/21/91e472ea-0ac2-4a42-8698-c6894c1dc405-1582279410588-dbe125684e97849701999221e7f71d51.jpg"
+                    alt="Promo Gajian Hotel ">
+                <img class="slider-image"
+                    src="https://static.tiket.photos/image/upload/v1579767403/banner/2020/01/23/a282e4e1-c2dd-4e1d-be36-569027ecee2a-1579767401703-7467898a4063e3cfcc327a794ce0ff8a.jpg"
+                    alt="Promo Pesawat Internasional">
+                <img class="slider-image"
+                    src="https://static.tiket.photos/image/upload/v1580120980/banner/2020/01/27/a7868991-1574-4ce7-b27f-876625e662db-1580120978826-bd3d6b397842205926c2850f5ac952c1.jpg"
+                    alt="Promo Hotel Internasional">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-widget">
+    <div class="product-list-container">
+
+    <div class="product-form">
+        <div class="product-form-header-group">
+            <div class="product-form-header-top">
+                <span class="product-form-subtitle">Pengalaman tak terlupakan dimulai dari sini</span>
+            </div>
+        </div>
+        <div class="product-form-search-group">
+            <div class="widget-date-input-group-container">
+                <div class="widget-input-container">
+                    <div class="product-search-input-container">
+                        <div class="custom-select">
+                            <select id="pkabin">
+                              <option value="0">Semua</option>
+                              <option value="1">Activities</option>
+                              <option value="2">Attractions</option>
+                              <option value="3">Events</option>
+                            </select>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-date-input-group-container">
+                <div class="widget-input-container">
+                    <div class="product-search-input-container">
+                        <input type="text" name="search-input" placeholder="Cari berdasarkan tujuan, events, attractions, dsb..." [(ngModel)]="searchTerm">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="product-form-container product-form-button-group">
+            <button class="product-form-search-btn">PENCARIAN ENTERTAINMENT</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="hotel-list-container">
+    <div class="hotel-list-container-left">
+        <div class="hotel-list-container-left-content">
+            Category
+        </div>
+        <div class="hotel-list-container-left-content">
+            <div>
+                <input type="radio" value="acivities" name="rbCategory"
+                [(ngModel)]="category">Acivities
+            </div>
+            <div>
+                <input type="radio" value="attractions" name="rbCategory"
+                [(ngModel)]="category">Attractions
+            </div>
+            <div>
+                <input type="radio" value="events" name="rbCategory"
+                [(ngModel)]="category">Events
+            </div>
+        </div>
+        <div class="hotel-list-container-left-content">
+            Price
+        </div>
+        <div class="hotel-list-container-left-content">
+            <input type="range" name="rangeInput" min="100000" max="10000000" [(ngModel)]="price">
+            <div>
+                <span>Rp100.000,-</span>
+                <span>Rp10.000.000,-</span>
+            </div>
+        </div>
+        <div class="hotel-list-container-left-content">
+            Start Date
+        </div>
+        <div class="hotel-list-container-left-content">
+            <div>
+                <input type="date" name="dtStart"
+                [(ngModel)]="start_date">
+            </div>
+        </div>
+        <div class="hotel-list-container-left-content">
+            Facilities
+        </div>
+        <div class="hotel-list-container-left-content">
+            <div>
+                <input type="date" name="dtEnd"
+                [(ngModel)]="end_date">
+            </div>
+        </div>
+        <div class="hotel-list-container-left-content">
+            <button (click)="reset()">RESET</button>
+        </div>
+    </div>
+    <div class="hotel-list-container-right">
+        <div class="hotel-filter-container">
+            <div class="dropdown">
+              <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Urutkan berdasarkan
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <input type="radio" value="terbaru" [(ngModel)]="sorted">Terbaru
+                    <input type="radio" value="tinggi" [(ngModel)]="sorted">Harga Tinggi ke Rendah
+                    <input type="radio" value="rendah" [(ngModel)]="sorted">Harga Rendah ke Tinggi
+                    <input type="radio" value="rekomendasi" [(ngModel)]="sorted">Rekomendasi
+                </mat-expansion-panel>
+            </mat-accordion>
+            </div>
+        </div>
+        <div class="hotel-data-container" *ngFor="let entertainment of (entertainmentK | entertainmentFilter:searchTerm:category:price:start_date:end_date:sorted); let i = index" [attr.data-index]="i">
+            <div class="hotel-data" >
+                <img src="{{entertainment.entertainment_image_path1}}" alt="">
+                <div class="hotel-data-content">
+                    <div>
+                        {{entertainment.entertainment_type}}
+                    </div>
+                    <a [routerLink]="['/entertainment', entertainment.entertainment_id]" routerLinkActive="router-link-active"  class="hotel_name">
+                        {{entertainment.entertainment_name}}
+                    </a>
+                    <div>
+                        {{entertainment.entertainment_address}}
+                    </div>
+                    <div>
+                        <!-- Rating : {{hotel.hotel_rating_count}} -->
+                    </div>
+                    <div>
+                        Rp {{entertainment.entertainment_price}},-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

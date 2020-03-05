@@ -1,0 +1,50 @@
+.promo-page{
+    .image-container{
+        img{
+            width: 100%;
+        }
+    }
+    .promo-container{
+        margin-top: 2%;
+        display: flex;
+        flex-direction: row;
+        .promo-detail-container{
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+            background-color: white;
+            border-radius: 8px;
+            margin:3%;
+            .content{
+                
+
+            }
+            .content-button{
+                display: flex;
+                justify-content: flex-end;;
+                height: 10%;
+            }
+        }
+        .other-promo{
+            display: flex;
+            flex-direction: column;
+            width: 30vw;
+            .thumb{
+                margin-right: 1%;
+                margin-bottom: 1%;
+                display: flex;
+                flex-direction: column;
+                .example-card {
+                    max-width: 400px;
+                    img{
+                        // max-width: 200px;
+                    }
+                    .example-header-image {
+                        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+                        background-size: cover;
+                      }
+                  }
+            }
+        }
+    }
+}

@@ -1,0 +1,168 @@
+<div>
+    UPDATE HOTEL
+</div>
+<div>
+    <input type="text" name="hName" placeholder="Hotel Name" [(ngModel)]="hName">
+</div>
+<div>
+    <input type="text" name="hPrice" placeholder="Hotel Price" [(ngModel)]="hPrice">
+</div>
+<div>
+    <input type="text" name="hImagePath1" placeholder="Hotel Img Path" [(ngModel)]="hImagePath1">
+</div>
+<!-- <div>
+    <input type="text" name="eImagePath2" placeholder="Hotel Img Path 2" [(ngModel)]="eImagePath2">
+</div>
+<div>
+    <input type="text" name="eImagePath3" placeholder="Hotel Img Path 3" [(ngModel)]="eImagePath3">
+</div>
+<div>
+    <input type="text" name="eImagePath4" placeholder="Hotel Img Path 4" [(ngModel)]="eImagePath4">
+</div>
+<div>
+    <input type="text" name="eImagePath5" placeholder="Hotel Img Path 5" [(ngModel)]="eImagePath5">
+</div> -->
+<div>
+    Hotel Location
+</div>
+<div class="hotel-list-container-left-content">
+    <input type="radio" value="1" name="rbLocation" [(ngModel)]="rbLocation"
+    >
+    <span>Jakarta</span>
+
+    <input type="radio" value="2" name="rbLocation" [(ngModel)]="rbLocation"
+    >
+    <span>Bandung</span>
+
+    <input type="radio" value="3" name="rbLocation" [(ngModel)]="rbLocation"
+    >
+    <span>Bali</span>
+    <br>
+    <input type="radio" value="4" name="rbLocation" [(ngModel)]="rbLocation"
+    >
+    <span>Surabaya</span>
+
+    <input type="radio" value="5" name="rbLocation" [(ngModel)]="rbLocation"
+    >
+    <span>Osaka</span>
+
+    <input type="radio" value="6" name="rbLocation" [(ngModel)]="rbLocation"
+    >
+    <span>Melbourne</span>
+</div>
+<div>
+    Hotel Type
+</div>
+<div class="hotel-list-container-left-content">
+    <input type="radio" value="1" name="rbType" [(ngModel)]="rbType"
+    >
+    <span>Hotel</span>
+
+    <input type="radio" value="2" name="rbType" [(ngModel)]="rbType"
+    >
+    <span>Hostel</span>
+
+    <input type="radio" value="3" name="rbType" [(ngModel)]="rbType"
+    >
+    <span>Resort</span>
+</div>
+<div>
+    <input type="text" name="hAddress" placeholder="Hotel Address" [(ngModel)]="hAddress">
+</div>
+<div>
+    <input type="text" name="hLatitude" placeholder="Hotel Latitude" [(ngModel)]="hLatitude">
+</div>
+<div>
+    <input type="text" name="hLongitude" placeholder="Hotel Longitude" [(ngModel)]="hLongitude">
+</div>
+<div>
+    <input type="text" name="hStar" placeholder="Hotel Star" [(ngModel)]="hStar">
+</div>
+<div>
+    <input type="text" name="hRating" placeholder="Hotel Rating" [(ngModel)]="hRating">
+</div>
+<div>
+    <input type="text" name="hAvailability" placeholder="Hotel Availability" [(ngModel)]="hAvailability">
+</div>
+<div>
+    <input type="text" name="hFacilities" placeholder="Hotel Facilities" [(ngModel)]="hFacilities">
+</div>
+
+
+<!-- <div class="toolbar">
+	<ul class="tool-list">
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command='justifyLeft'
+				class="tool--btn">
+				<i class=' fas fa-align-left'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('justifyCenter')"
+				class="tool--btn">
+				<i class=' fas fa-align-center'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('bold')"
+				class="tool--btn">
+				<i class=' fas fa-bold'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('italic')"
+				class="tool--btn">
+				<i class=' fas fa-italic'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('bold')"
+				class="tool--btn">
+				<i class=' fas fa-underline'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('insertOrderedList')"
+				class="tool--btn">
+				<i class=' fas fa-list-ol'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('insertUnorderedList')"
+				class="tool--btn">
+				<i class=' fas fa-list-ul'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('UPDATElink')"
+				class="tool--btn">
+				<i class=' fas fa-link'></i>
+			</button>
+		</li>
+	</ul>
+</div>
+
+<div id="output" contenteditable="true"></div>
+<div>
+    <input type="text" name="eT_C" placeholder="Hotel T&C" [(ngModel)]="eT_C">
+</div> -->
+
+<div>
+    <button (click)="updateData()">UPDATE HOTEL</button>
+</div>

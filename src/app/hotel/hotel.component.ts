@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Hotel } from '../model/Hotel';
+import {HotelService} from '../service/hotel.service';
+import {HoteldetailService} from '../service/hoteldetail.service';
+import { async } from '@angular/core/testing';
+import { Hoteldetail } from '../model/Hoteldetail';
+import { Hotelfacility } from '../model/Hotelfacility';
+import { ChatService } from '../service/chat.service';
 
 @Component({
   selector: 'app-hotel',
@@ -6,61 +13,115 @@ import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angula
   styleUrls: ['./hotel.component.scss']
 })
 export class HotelComponent implements OnInit {
+  hotelData : Hotel[];
+  hotelK : Hotel[] = [];
+  from : number = 0
 
-  @ViewChild('mapRef', {static: true }) mapElement: ElementRef;
-  constructor() { }
+  hotelfacility : Hotelfacility[]
+  hotelfacilityDat : Hotelfacility
+  searchTerm : String;
+  rating: number;
+  area:String;
+  price:number;
+  facility:String;
+
+  getHotelData(){
+    this.service.getHotel().subscribe(async result=>{
+      this.hotelData=result
+    })
+  }
+
+  searchHotel(){
+    var fil = document.getElementById("filter-search");
+    fil.style.display = "inline";
+  }
+
+  rmSearch() {
+    var dots = document.getElementById("dotsRating");
+    var moreText = document.getElementById("rm-rating");
+    var btnText = document.getElementById("lblRating");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.style.display = "none";
+      moreText.style.display = "inline";
+    }
+  }
+
+  rmRating() {
+    var dots = document.getElementById("dotsRating");
+    var moreText = document.getElementById("rm-rating");
+    var btnText = document.getElementById("lblRating");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.style.display = "none";
+      moreText.style.display = "inline";
+    }
+  }
+
+  rmFacility() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("rm-facility");
+    var btnText = document.getElementById("lblFacility");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.style.display = "none";
+      moreText.style.display = "inline";
+    }
+  }
+
+  rmArea() {
+    var dots = document.getElementById("dotsArea");
+    var moreText = document.getElementById("rm-area");
+    var btnText = document.getElementById("lblArea");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.style.display = "none";
+      moreText.style.display = "inline";
+    }
+  }
+
+  reset(){
+    this.searchTerm=null
+    this.rating=null
+    this.area=null
+    this.price=null
+    this.facility=null
+  }
+
+  constructor(private service:HotelService, private serviceNotify:ChatService) {
+    console.log(this.hotelfacility)
+    this.getHotelData()
+  }
 
   ngOnInit() {
-    this.renderMap();
+    this.serviceNotify.listen('hotel').subscribe(m => {
+      alert(m.toString())
+    });
+    // alert("helppppppppp")
+
   }
 
-  loadMap = () => {
-    var map = new window['google'].maps.Map(this.mapElement.nativeElement, {
-      center: {lat: -6.21462, lng: 106.84513},
-      zoom: 8
-    });
-  
-    var marker = new window['google'].maps.Marker({
-      position: {lat: -6.21462, lng: 106.84513},
-      map: map,
-      title: 'Hello World!',
-      draggable: true,
-      animation: window['google'].maps.Animation.DROP,
-    });
-  
-    var contentString = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h3 id="thirdHeading" class="thirdHeading">W3path.com</h3>'+
-    '<div id="bodyContent">'+
-    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>'+
-    '</div>'+
-    '</div>';
-  
-    var infowindow = new window['google'].maps.InfoWindow({
-      content: contentString
-    });
-  
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-  
-  }
-  renderMap() {
-      
-    window['initMap'] = () => {
-      this.loadMap();      
-    }
-    if(!window.document.getElementById('google-map-script')) {
-      var s = window.document.createElement("script");
-      s.id = "google-map-script";
-      s.type = "text/javascript";
-      s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDPQtzTesRhf6zhxyh7sESqaiqgbHDmItc&callback=initMap";
-        
-      window.document.body.appendChild(s);
-    } else {
-      this.loadMap();
-    }
-  }
+
+
 
 }

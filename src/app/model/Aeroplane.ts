@@ -1,0 +1,20 @@
+export class Aeroplane{
+    aeroplane_id:number
+    aeroplane_name:string
+    aeroplane_company:string
+    aeroplane_type:string
+    aeroplane_image_path:string
+    aeroplane_depart_date:string
+    aeroplane_depart_time:string
+    aeroplane_arrive_date:string
+    aeroplane_arrive_time:string
+    aeroplane_duration:number
+    aeroplane_price:number
+    aeroplane_price_raw:number
+    aeroplane_price_tax:number
+    aeroplane_transit:string
+    aeroplane_transit_duration:number
+    aeroplane_facilities:string
+    aeroplane_depart_location:string
+    aeroplane_arrive_location:string
+}

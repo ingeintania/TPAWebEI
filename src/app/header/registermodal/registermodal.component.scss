@@ -17,7 +17,7 @@ body{
         .formLogin{
             margin-top: 3%;
             display: block;
-            
+
             div{
                 margin-top: 3%;
             }
@@ -34,6 +34,41 @@ body{
                 height: 40px;
                 margin-top: 3%;
             }
+            #email{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
+            #phone{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
+            #gender{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
+            #city{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
+            #address{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
+            #pos{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
+            #pass{
+              width: 294px;
+              height: 40px;
+              margin-top: 3%;
+            }
             .telp{
                 display: flex;
                 .custom-select{
@@ -42,7 +77,7 @@ body{
                     #kodenegara{
                         width: 100px;
                         height: 40px;
-                        
+
                     }
                 }
                 #nomorponsel{
@@ -71,9 +106,9 @@ body{
                 height: 40px;
                 border:none;
             }
-            
+
         }
 
     }
-    
+
 }

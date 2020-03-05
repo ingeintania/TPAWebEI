@@ -1,0 +1,99 @@
+<div>
+    CREATE BLOG
+</div>
+<div>
+    <input type="text" name="bImagePath" placeholder="Blog Image Path" [(ngModel)]="bImagePath">
+</div>
+<div>
+    <input type="text" name="bTitle" placeholder="Blog Title" [(ngModel)]="bTitle">
+</div>
+<div>
+    <input type="text" name="bContent" placeholder="Blog Content" [(ngModel)]="bContent">
+</div>
+<div>
+    <input type="text" name="bViewers" placeholder="Blog Viewers" [(ngModel)]="bViewers">
+</div>
+<div>
+    <input type="text" name="bCategory" placeholder="Blog Category" [(ngModel)]="bCategory">
+</div>
+<div>
+    <input type="text" name="bWriter" placeholder="Blog Writer" [(ngModel)]="bWriter">
+</div>
+
+<div class="toolbar">
+	<ul class="tool-list">
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command='justifyLeft'
+				class="tool--btn">
+				<i class=' fas fa-align-left'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('justifyCenter')"
+				class="tool--btn">
+				<i class=' fas fa-align-center'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('bold')"
+				class="tool--btn">
+				<i class=' fas fa-bold'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('italic')"
+				class="tool--btn">
+				<i class=' fas fa-italic'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('bold')"
+				class="tool--btn">
+				<i class=' fas fa-underline'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('insertOrderedList')"
+				class="tool--btn">
+				<i class=' fas fa-list-ol'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('insertUnorderedList')"
+				class="tool--btn">
+				<i class=' fas fa-list-ul'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('createlink')"
+				class="tool--btn">
+				<i class=' fas fa-link'></i>
+			</button>
+		</li>
+	</ul>
+</div>
+
+<div id="output" contenteditable="true"></div>
+<div>
+    <input type="text" name="eT_C" placeholder="Entertaintment T&C" [(ngModel)]="eT_C">
+</div>
+
+<div>
+    <button (click)="insertData()">CREATE BLOG</button>
+</div>

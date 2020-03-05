@@ -1,0 +1,162 @@
+#rm-facility{
+  display: none;
+  }
+
+  #rm-rating{
+    display: none;
+    }
+
+  #rm-area{
+    display: none;
+    }
+
+
+#filter-search{
+  display: none;
+}
+
+.hotel-list{
+  .hotel-list-top{
+    padding: 2% 5% 2% 5%;
+    // position: fixed;
+    background-color: white;
+    z-index: 2000000;
+    // width: 100%;
+    .searchResult{
+        padding-bottom: 2%;
+        .searchResultContainer{
+            .product-form-search-group{
+                display: flex;
+                border-top: 1px solid lightgray;
+                border-bottom: 1px solid lightgray;
+                height: 100%;
+                width: 100%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                button{
+                    border-radius: 40px;
+                    background-color: yellow;
+                    width: 200px;
+                    height: 40px;
+                    border:none;
+                    margin-left: 5%;
+                }
+                .widget-date-input-group-container{
+                    margin-right: 3%;
+                    padding-left: 5%;
+                    .widget-input-container{
+                        .product-search-input-container{
+                          display: flex;
+                            input{
+                                border: none;
+                                width:150%;
+                                height:200%;
+                                margin-top: 2%;
+                            }
+                            .custom-select{
+                                margin-top: 2%;
+                                #pkabin{
+                                    width: 100px;
+                                    height: 40px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .product-form-button-group{
+                margin-top: 2%;
+                margin-right: 5%;
+                button{
+                    border-radius: 40px;
+                    background-color: yellow;
+                    // width: 200px;
+                    // height: 40px;
+                    border:none;
+                    float: right;
+                }
+            }
+        }
+    }
+    .filterSearch{
+        display: flex;
+        .custom-select{
+            display: flex;
+            justify-content: flex-end;
+           select{
+               padding:10%;
+           }
+        }
+    }
+}
+    .hotel-list-container{
+        background-color: #F5F6FA;
+        padding: 2% 3% 2% 3%;
+        display: flex;
+        .hotel-list-container-left{
+            background-color: white;
+            padding:1%;
+            border-radius: 8px;
+            width: 20%;
+            .mapBtn{
+                background-color: blue($color: #000000);
+                a{
+                    // text-color: white;
+                    background-color: blue($color: #000000);
+                }
+            }
+            .hotel-data{
+                img{
+                    width: 100%;
+                }
+            }
+
+        }
+        .hotel-list-container-right{
+            margin-left: 2%;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+
+            .map-container {
+                // z-index: 0;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                // width: 20%;
+                height: 100%;
+                margin-top: 36%;
+                margin-left: 25%;
+                // margin-bottom: 60%;
+                .map-frame {
+                    // border: 2px solid black;
+                    height: 100%;
+                    #map {
+                        height: 100%;
+                      }
+                  }
+              }
+            .hotel-data{
+                padding:2%;
+                display: flex;
+                img{
+                    height: 240px;
+                    width: 320px;
+                    border-radius: 8px;
+                }
+                .hotel-data-content{
+                    padding-left: 2%;
+                }
+            }
+
+        }
+    }
+
+}

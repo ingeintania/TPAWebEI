@@ -15,35 +15,27 @@
       Perjalanan serumu dimulai disini
     </div>
     <div class="formLogin">
-      <!-- <form action=""> -->
-        <input type="text" name="telp" id="telp" placeholder="Nomor Ponsel atau Email" formControlName="telp" required>
-        <!-- <div *ngIf="telp.invalid && (telp.dirty || telp.touched)"
-        class="alert alert-danger" (click)="emptyError()">
-    
-          <div *ngIf="name.errors.required">
-            Name is required.
-          </div>
-          <div *ngIf="name.errors.minlength">
-            Name must be at least 4 characters long.
-          </div>
-          <div *ngIf="name.errors.forbiddenName">
-            Name cannot be Bob.
-          </div>
-        </div> -->
-        <button type="submit"mat-raised-button (click)="openDialog()">LANJUTKAN</button>
-      <!-- </form> -->
+      <input type="text" name="telp" id="telp" placeholder="Nomor Ponsel atau Email" [(ngModel)]="email">
+      <mat-form-field appearance="outline" id="pass">
+        <input matInput  placeholder="Password" [(ngModel)]="password" [type]="hide ? 'text' : 'password'" (keyup)="onType()" required>
+        <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <br>
+    <br>
+    <br>
+      <button type="submit" (click)="login()">LANJUTKAN</button>
     </div>
     <div class="txtCenter">
       <span>- atau dengan -</span>
     </div>
     <div class="eLogin">
-      <button id="ggl" (click)="googleInit()">Google</button>
-      <button id="fb">Facebook</button>
+      <app-googlesignin></app-googlesignin>
+      <app-facebooksignin></app-facebooksignin>
     </div>
     <div class="txtCenter">
       <span>Dengan mendaftar kamu menyetujui Kebijakan Privasi dan Syarat & Ketentuan kami.</span>
     </div>
   </div>
-  
+
 </body>
 </html>

@@ -1,0 +1,47 @@
+<div class="promo-page">
+  <div class="image-container">
+      <img mat-card-image src="{{blog.blog_image_path}}" alt="">
+  </div>
+  <div class="promo-container">
+      <div class="promo-detail-container">
+          <mat-card-content class="content">
+              <h1>{{blog.blog_title}}</h1>
+          </mat-card-content>
+          <mat-card-content class="content-button">
+              <share-button button="facebook">Facebook</share-button>
+              <share-button button="copy">Copy Link</share-button>
+              <share-button button="whatsapp">Email</share-button>
+          </mat-card-content>
+          <mat-card-content class="content">
+              {{blog.blog_content}}
+          </mat-card-content>
+          <br>
+          <mat-card-content class="content">
+              <!-- Periode Promo :
+              {{promoData[3].promo_periode}} -->
+          </mat-card-content>
+          <br>
+          <mat-card-content class="content">
+              Viewers : {{blog.blog_viewers}}
+          </mat-card-content>
+      </div>
+      <div class="other-promo">
+          <div class="thumb" *ngFor="let blog of blogData|blogFilter">
+              <mat-card>
+                  <img mat-card-image src="{{blog.blog_image_path}}" alt="Photo of a Shiba Inu">
+                  <mat-card-content>
+
+                          <p>
+                              {{blog.blog_title}}
+                          </p>
+                          <p>
+                           Viewers : {{blog.blog_viewers}}
+                        </p>
+
+                  </mat-card-content>
+
+              </mat-card>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,18 +1,19 @@
 $themeColor : rgb(0, 100, 210);
 
     .header-top{
-        padding-left: 1%;
-        padding-right: 1%;
+        padding-left: 5%;
+        padding-right: 5%;
         background-color:rgb(247, 247, 247);
         box-sizing:border-box;
         display:block;
         font-family:OpenSans-Regular;
+        padding-bottom:3%;
+        padding-top:3%;
         .header-container{
             box-sizing:border-box;
             display:block;
             font-family:OpenSans-Regular;
-            line-height:18.4px;
-            margin-bottom:0px;
+
             margin-left:0px;
             margin-right:0px;
             margin-top:0px;
@@ -21,7 +22,7 @@ $themeColor : rgb(0, 100, 210);
                 box-sizing:border-box;
                 display:inline-block;
                 font-family:OpenSans-Regular;
-                line-height:32px;
+                // line-height:32px;
                 max-width:1000px;
                 position:relative;
                 text-size-adjust:100%;
@@ -56,14 +57,14 @@ $themeColor : rgb(0, 100, 210);
                         }
                     }
                 }
-                
+
             }
             .header-right-side{
                 box-sizing:border-box;
                 clear:both;
                 float:right;
                 font-family:OpenSans-Regular;
-                line-height:32px;
+                // line-height:32px;
                 text-size-adjust:100%;
                 .header-language{
                     box-sizing:border-box;
@@ -101,7 +102,7 @@ $themeColor : rgb(0, 100, 210);
                             border-top-style:solid;
                             border-top-width:1px;
                             box-sizing:border-box;
-                            
+
                             cursor:pointer;
                             display:inline-block;
                             font-family:OpenSans-Regular;
@@ -117,7 +118,7 @@ $themeColor : rgb(0, 100, 210);
                                 border-right-style:none;
                                 border-top-style:none;
                                 box-sizing:border-box;
-                                
+
                                 cursor:pointer;
                                 display:block;
                                 font-family:OpenSans-Regular;
@@ -196,7 +197,7 @@ $themeColor : rgb(0, 100, 210);
                         // width:40.5156px;
                         .currency-code{
                             box-sizing:border-box;
-                            
+
                             cursor:pointer;
                             display:inline-block;
                             font-family:OpenSans-Regular;
@@ -249,16 +250,16 @@ $themeColor : rgb(0, 100, 210);
                                 width:16px;
                                 -webkit-font-smoothing:antialiased;
                             }
-                        }                
+                        }
                     }
-                }   
+                }
             }
         }
     }
-    
+
     .header-bottom{
-        padding-left: 1%;
-        padding-right: 1%;
+        padding-left: 5%;
+        padding-right: 5%;
         background-color:rgb(255, 255, 255);
         box-sizing:border-box;
         display:block;
@@ -369,7 +370,7 @@ $themeColor : rgb(0, 100, 210);
                         color: $themeColor;
                     }
                 }
-                
+
                     label.header-right-item{
                         font-size: 1px;
                         background-color:rgba(0, 0, 0, 0);
@@ -421,9 +422,60 @@ $themeColor : rgb(0, 100, 210);
                         text-decoration-style:solid;
                         z-index:500;
                     }
-                
+                    .dropdown{
+                        display: inline-block;
+                        position: relative;
+                        &:hover .dropdown-content{
+                            display: block;
+                        }
+                        .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            background-color: white;
+                            min-width: 90px;
+                            z-index: 1;
+                            a{
+                                color: black;
+                                text-decoration: none;
+                                display: block;
+                                font-size: 15px;
+                                margin: 1%;
+                            }
+                        }
+                        label.header-username-item{
+                            background-color:rgba(0, 0, 0, 0);
+                            border-bottom-left-radius:14px;
+                            border-bottom-right-radius:14px;
+                            border-top-left-radius:14px;
+                            border-top-right-radius:14px;
+                            box-shadow:rgba(53, 64, 90, 0.2) 0px 2px 8px 0px;
+                            box-sizing:border-box;
+                            color:$themeColor;
+                            cursor:pointer;
+                            display:inline-block;
+                            font-family:OpenSans-SemiBold;
+                            font-size:14px;
+                            line-height:21px;
+                            margin-left:16px;
+                            outline-color:$themeColor;
+                            outline-style:none;
+                            outline-width:0px;
+                            padding-bottom:4px;
+                            padding-left:12px;
+                            padding-right:12px;
+                            padding-top:4px;
+                            position:relative;
+                            text-decoration-color:$themeColor;
+                            text-decoration-line:none;
+                            text-decoration-style:solid;
+                            z-index:500;
+                            // display: none;
+                        }
 
-                
+                    }
+
+
+
             }
         }
-    }    
+    }

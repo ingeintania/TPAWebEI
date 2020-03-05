@@ -1,0 +1,143 @@
+div{
+  display: flex;
+  justify-content: center;
+  .title{
+    display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+      label{
+          // display: inline-block;
+          color: rgb(0, 154, 255);
+          margin-right: 3%;
+          font-size: 28px;
+      }
+      h1{
+          display: flex;
+          justify-content: center;
+      }
+  }
+  .formLogin{
+      // margin-top: 3%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+
+      .data-penumpang{
+        display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      }
+      hr{
+        color: black;
+        background-color: black;
+        // border-top: 5px solid black;
+        width: 100%;
+      }
+
+      input{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      label{
+          margin-top: 3%;
+      }
+      #nama{
+          width: 294px;
+          height: 40px;
+          margin-top: 3%;
+      }
+      #nama2{
+          width: 294px;
+          height: 40px;
+          margin-top: 3%;
+      }
+      #promoCode{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #price{
+          width: 294px;
+          height: 40px;
+          margin-top: 3%;
+      }
+      #email{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #phone{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #nationality{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #qty{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #address{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #pos{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      #pass{
+        width: 294px;
+        height: 40px;
+        margin-top: 3%;
+      }
+      .telp{
+          display: flex;
+          .custom-select{
+              margin-right: 3%;
+              margin-top: 2%;
+              #kodenegara{
+                  width: 100px;
+                  height: 40px;
+
+              }
+          }
+          #nomorponsel{
+              width: 190px;
+              height: 40px;
+              margin-top: 2%;
+          }
+      }
+      #katasandi{
+          width: 294px;
+          height: 40px;
+          margin-top: 3%;
+      }
+      .txtCenter{
+          margin-top: 1%;
+          span{
+              text-align: center;
+              font-size: 10px;
+          }
+      }
+      button{
+          margin-top: 3%;
+          border-radius: 40px;
+          background-color: yellow;
+          width: 294px;
+          height: 40px;
+          border:none;
+      }
+
+  }
+
+}

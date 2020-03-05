@@ -2,85 +2,79 @@ import {Component, ElementRef,OnInit} from '@angular/core';
 declare const gapi: any;
 import {MatDialog} from '@angular/material';
 import { RegistermodalComponent } from '../registermodal/registermodal.component';
-import { HotelComponent } from 'src/app/hotel/hotel.component';
+import { User } from 'src/app/model/User';
+import { UserService } from 'src/app/service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-loginmodal', 
+  selector: 'app-loginmodal',
   templateUrl: './loginmodal.component.html',
   styleUrls: ['./loginmodal.component.scss']
 })
 export class LoginmodalComponent implements OnInit {
+  userData : User[]
 
-  private clientId:string = '452123500757-nr83g1hc4ck15jgle8mpu4erctd9p50a.apps.googleusercontent.com';
-  
-  private scope = [
-    'profile',
-    'email',
-    'https://www.googleapis.com/auth/plus.me',
-    'https://www.googleapis.com/auth/contacts.readonly',
-    'https://www.googleapis.com/auth/admin.directory.user.readonly'
-  ].join(' ');
+  email:string
+  password:string
 
-  public auth2: any;
-  public googleInit() {
-    let that = this;
-    gapi.load('auth2', function () {
-      that.auth2 = gapi.auth2.init({
-        client_id: that.clientId,
-        cookiepolicy: 'single_host_origin',
-        scope: that.scope
-      });
-      that.attachSignin(that.element.nativeElement.firstChild);
-    });
+  constructor(private dialog: MatDialog, private service: UserService, public router: Router) {
+
   }
-  public attachSignin(element) {
-    let that = this;
-    this.auth2.attachClickHandler(element, {},
-      function (googleUser) {
 
-        let profile = googleUser.getBasicProfile();
-        console.log('Token || ' + googleUser.getAuthResponse().id_token);
-        console.log('ID: ' + profile.getId());
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-        //YOUR CODE HERE
+  login(){
+    if(this.email==null){
+      alert("All Data Must be filled!")
+    }
+    if(!this.email.includes('@')){
+      alert("Email must contains '@'!")
+    }
+    if(this.password==null){
+      alert("All Data Must be filled!")
+    }
+    if(this.password.length < 5){
+      alert("Password must contains at least 5 characters!")
+    }
 
-
-      }, function (error) {
-        console.log(JSON.stringify(error, undefined, 2));
-      });
-  }
-  
-  constructor(private element: ElementRef, private dialog: MatDialog) {
-    console.log('ElementRef: ', this.element);
+    console.log(this.email)
+    console.log(this.password)
+    this.service.getLogin(this.email, this.password).subscribe(async result=>{
+      this.userData=result
+      console.log(this.userData)
+      if(this.userData== null){
+        alert("User hasn't been registred!")
+      }
+      else if(this.userData!= null){
+        alert("Success Login!")
+        if(this.userData[0].user_email.includes('admin')){
+          this.router.navigate(['/admin'])
+        }
+      }
+    })
+    this.dialog.closeAll()
   }
 
   openDialog(){
-    this.dialog.open(HotelComponent)
+    this.dialog.open(RegistermodalComponent)
   }
 
   emptyError(){
     alert("Name must be filled!")
   }
 
-  // ngAfterViewInit() {
-  //   this.googleInit();
-  // }
   ngOnInit() {
   }
 
 }
 
 
-@Component({
-  selector: 'my-app',
-  template: `{{title}}
-    <google-signin></google-signin>
-    <footer>Angular version: {{angularVersion}}</footer>`
-})
-export class AppComponent {
-  title     = "Google SignIn button";
-  angularVersion = 'latest stable';
-  constructor() { console.clear(); }
-}
+// @Component({
+//   selector: 'my-app',
+//   template: `{{title}}
+//     <google-signin></google-signin>
+//     <footer>Angular version: {{angularVersion}}</footer>`
+// })
+// export class AppComponent {
+//   title     = "Google SignIn button";
+//   angularVersion = 'latest stable';
+//   constructor() { console.clear(); }
+// }

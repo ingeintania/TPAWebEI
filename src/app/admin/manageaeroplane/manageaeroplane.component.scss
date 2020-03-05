@@ -1,0 +1,153 @@
+.mat{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    mat-spinner{
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+}
+
+th{
+    // margin-right: 5% !important;
+    // margin-left: 5% !important;
+    width: 10vw;
+}
+
+td{
+    width: 10vw;
+    // margin-right: 5% !important;
+    // margin-left: 5% !important;
+}
+
+.hotel-list-container{
+    background-color: #F5F6FA;
+    padding: 2% 3% 2% 3%;
+    display: flex;
+    .hotel-list-container-left{
+        background-color: white;
+        padding:2%;
+        border-radius: 8px;
+        width: 20%;
+        .hotel-list-container-left-content{
+            
+            padding:2%;
+            span{
+                font-size: 12px;
+            }
+            button{
+                border-radius: 40px;
+                background-color: yellow;
+                width: 100%;
+                height: 5vw;
+                border:none;
+                
+            }
+            div{
+                span{
+                    font-size: 10px;
+                    padding-right: 20%;
+                }
+            }
+        }
+        
+
+    }
+    .hotel-list-container-right{
+        margin-left: 2%;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+        .hotel-filter-container{
+            display: flex;
+			justify-content: center;
+			text-align: center;
+			h1{
+				display: flex;
+				justify-content: center;
+				text-align: center;
+			}
+            .dropdown{
+                display: inline-block;
+                position: relative;
+                &:hover .dropdown-content{
+                    display: block;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: white;
+                    min-width: 150px;
+                    z-index: 1;
+                    margin: 2%;
+                    a{
+                        color: black;
+                        text-decoration: none;
+                        display: block;
+                        font-size: 15px;
+                        padding: 2%;
+                    }
+                }
+                label.header-username-item{
+                    background-color:rgba(0, 0, 0, 0);
+                    border-bottom-left-radius:14px;
+                    border-bottom-right-radius:14px;
+                    border-top-left-radius:14px;
+                    border-top-right-radius:14px;
+                    box-shadow:rgba(53, 64, 90, 0.2) 0px 2px 8px 0px;
+                    box-sizing:border-box;
+                    cursor:pointer;
+                    display:inline-block;
+                    font-family:OpenSans-SemiBold;
+                    font-size:14px;
+                    line-height:21px;
+                    margin-left:16px;
+                    outline-style:none;
+                    outline-width:0px;
+                    padding-bottom:4px;
+                    padding-left:12px;
+                    padding-right:12px;
+                    padding-top:4px;
+                    position:relative;
+                    text-decoration-line:none;
+                    text-decoration-style:solid;
+                    z-index:200;
+                }
+            
+            }
+        }
+        .hotel-data-container{
+            margin-top: 2%;
+            background-color: white;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			h1{
+				display: flex;
+				justify-content: center;
+				text-align: center;
+			}
+            .hotel-data{
+                padding:2%;
+                display: flex;
+                img{
+                    height: 240px;
+                    width: 320px;
+                    border-radius: 8px;
+                }
+                .hotel-data-content{
+                    padding-left: 2%;
+                    a{
+                        font-size: 25px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}

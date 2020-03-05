@@ -1,0 +1,82 @@
+<div class="mat" *ngIf="loaded == false">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="hotel-list-container" *ngIf="loaded == true">
+    <div class="hotel-list-container-left">
+
+        <div class="hotel-list-container-left-content">
+            <button (click)="openCreate()" >CREATE ENTERTAINMENT</button>
+        </div>
+
+    </div>
+    <div class="hotel-list-container-right">
+
+        <div class="hotel-data-container">
+          <h1 style="text-align: center; justify-content: center;">
+            MANAGE ENTERTAINMENT
+          </h1>
+        </div>
+    </div>
+</div>
+<div class="mat-elevation-z8" >
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Cari data..">
+  </mat-form-field>
+	<table mat-table [dataSource]="dataSource" *ngIf="loaded == true">
+
+	  <!-- Position Column -->
+	  <ng-container matColumnDef="image">
+		<th mat-header-cell *matHeaderCellDef> Image </th>
+		<td mat-cell *matCellDef="let entertainment"> <img src="{{entertainment.image}}" alt="" style="width: 80%;"> </td>
+	  </ng-container>
+
+	  <!-- Name Column -->
+	  <ng-container matColumnDef="name">
+		<th mat-header-cell *matHeaderCellDef> Name </th>
+		<td mat-cell *matCellDef="let entertainment"> {{entertainment.name}} </td>
+	  </ng-container>
+
+	  <!-- Weight Column -->
+	  <!-- <ng-container matColumnDef="address">
+		<th mat-header-cell *matHeaderCellDef> Location </th>
+		<td mat-cell *matCellDef="let entertainment">
+            {{entertainment.address}}
+        </td>
+	  </ng-container> -->
+
+	  <!-- Symbol Column -->
+	  <!-- <ng-container matColumnDef="rating">
+		<th mat-header-cell *matHeaderCellDef> Rating </th>
+		<td mat-cell *matCellDef="let entertainment"> {{entertainment.rating_count}}
+		</td>
+      </ng-container> -->
+
+      <!-- Weight Column -->
+	  <ng-container matColumnDef="address">
+		<th mat-header-cell *matHeaderCellDef> Address </th>
+		<td mat-cell *matCellDef="let entertainment"> {{entertainment.address}} </td>
+	  </ng-container>
+
+	  <!-- Symbol Column -->
+	  <ng-container matColumnDef="endDate">
+		<th mat-header-cell *matHeaderCellDef> Facilities </th>
+		<td mat-cell *matCellDef="let entertainment"> {{entertainment.endDate}}
+		</td>
+	  </ng-container>
+
+	  <ng-container matColumnDef="button">
+		<th mat-header-cell *matHeaderCellDef></th>
+		<td mat-cell *matCellDef="let entertainment">
+			<button (click)="openUpdate(entertainment)">UPDATE</button>
+            <button (click)="openDelete(entertainment)">DELETE</button>
+		</td>
+	  </ng-container>
+
+	  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+
+	<mat-paginator [pageSizeOptions]="[3]" showFirstLastButtons></mat-paginator>
+  </div>

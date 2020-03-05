@@ -14,31 +14,65 @@
     </div>
     <div class="formLogin">
       <!-- <form action=""> -->
-        <div>Email</div>
-        <div>
-          <label for="">Kosong</label>
-        </div>
-        <input type="text" name="namadepan" id="namadepan" placeholder="Nama Depan">
-        <input type="text" name="namabelakang" id="namabelakang" placeholder="Nama Belakang">
-        <div class="telp">
-          <div class="custom-select">
-            <select id="kodenegara">
-              <option value="0">+62</option>
-              <option value="1">+61</option>
-              <option value="2">+673</option>
-              <option value="3">+63</option>
-              <option value="4">+60</option>
-              <option value="5">+64</option>
-            </select>
-          </div>
-          <input type="text" name="nomorponsel" id="nomorponsel" placeholder="Nomor Ponsel">
-        </div>
-        <input type="password" name="katasandi" id="katasandi" placeholder="Kata Sandi">
+
+        <input type="text" name="namadepan" id="namadepan" placeholder="Nama Depan"
+        [(ngModel)]="firstname">
+        <input type="text" name="namabelakang" id="namabelakang" placeholder="Nama Belakang"
+        [(ngModel)]="lastname">
+        <input type="text" name="email" id="email" placeholder="Email"
+        [(ngModel)]="email">
+        <input type="text" name="phone" id="phone" placeholder="Nomor Telepon"
+        [(ngModel)]="phone">
+        <input type="text" name="gender" id="gender" placeholder="Jenis Kelamin"
+        [(ngModel)]="gender">
+        <input type="text" name="city" id="city" placeholder="Kota Domisili"
+        [(ngModel)]="city">
+        <input type="text" name="address" id="address" placeholder="Alamat Domisili"
+        [(ngModel)]="address">
+        <input type="text" name="pos" id="pos" placeholder="Kode Pos"
+        [(ngModel)]="post_code">
+        <!-- <input  type="password" name="pass" id="pass" placeholder="Password"
+        [(ngModel)]="password"> -->
+        <mat-form-field appearance="outline" id="pass">
+          <input matInput  placeholder="Password" [(ngModel)]="password" [type]="hide ? 'text' : 'password'" (keyup)="onType()" required>
+          <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field>
+      <br>
+      <br>
+      <br>
+
+        <!-- <input *ngIf="tgl == 'checked'" type="password" name="pass" id="pass" placeholder="Password"
+        [(ngModel)]="password">
+        <input type="checkbox" value="a" [(ngModel)]="tgl"> -->
+        <!-- <input id="pass_log_id" type="password" name="pass" value="MySecretPass">
+        <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span> -->
+        <!-- <script>
+          $(document).on('click', '.toggle-password', function() {
+
+          $(this).toggleClass("fa-eye fa-eye-slash");
+
+          var input = $("#pass_log_id");
+          input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+          });
+        </script> -->
+
+        <!-- <input type="password" name="katasandi" id="katasandi" placeholder="Kata Sandi"> -->
+        <!-- <mat-form-field>
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-hint *ngIf="!passwordInput.value">Enter your password</mat-hint>
+        </mat-form-field> -->
         <div class="txtCenter"><span>Min. 7 karakter dengan kombinasi antara angka, simbol, & huruf kapital.</span></div>
-        <button type="submit"mat-raised-button (click)="openDialog()">BUAT AKUN</button>
+        <button type="submit"mat-raised-button (click)="insertData()">BUAT AKUN</button>
       <!-- </form> -->
+
+      <div class="eLogin">
+        <app-googlesignin></app-googlesignin>
+        <app-facebooksignin></app-facebooksignin>
+      </div>
     </div>
   </div>
-  
+
+
 </body>
 </html>

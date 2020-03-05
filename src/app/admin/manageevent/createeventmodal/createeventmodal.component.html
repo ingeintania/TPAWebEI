@@ -1,0 +1,158 @@
+<div>
+    CREATE ENTERTAINMENT
+</div>
+<div>
+    <input type="text" name="eName" placeholder="Entertaintment Name" [(ngModel)]="eName">
+</div>
+<div>
+    <input type="text" name="ePrice" placeholder="Entertaintment Price" [(ngModel)]="ePrice">
+</div>
+<div>
+    <input type="text" name="eImagePath1" placeholder="Entertaintment Img Path 1" [(ngModel)]="eImagePath1">
+</div>
+<!-- <div>
+    <input type="text" name="eImagePath2" placeholder="Entertaintment Img Path 2" [(ngModel)]="eImagePath2">
+</div>
+<div>
+    <input type="text" name="eImagePath3" placeholder="Entertaintment Img Path 3" [(ngModel)]="eImagePath3">
+</div>
+<div>
+    <input type="text" name="eImagePath4" placeholder="Entertaintment Img Path 4" [(ngModel)]="eImagePath4">
+</div>
+<div>
+    <input type="text" name="eImagePath5" placeholder="Entertaintment Img Path 5" [(ngModel)]="eImagePath5">
+</div> -->
+<div>
+    Entertainment Location
+</div>
+<div class="hotel-list-container-left-content">
+    <input type="radio" value="1" name="rbCategory" [(ngModel)]="rbCategory"
+    >
+    <span>Jakarta</span>
+
+    <input type="radio" value="2" name="rbCategory" [(ngModel)]="rbCategory"
+    >
+    <span>Bandung</span>
+
+    <input type="radio" value="3" name="rbCategory" [(ngModel)]="rbCategory"
+    >
+    <span>Bali</span>
+    <br>
+    <input type="radio" value="4" name="rbCategory" [(ngModel)]="rbCategory"
+    >
+    <span>Surabaya</span>
+
+    <input type="radio" value="5" name="rbCategory" [(ngModel)]="rbCategory"
+    >
+    <span>Osaka</span>
+
+    <input type="radio" value="6" name="rbCategory" [(ngModel)]="rbCategory"
+    >
+    <span>Melbourne</span>
+</div>
+<div>
+    <input type="text" name="eAddress" placeholder="Entertaintment Address" [(ngModel)]="eAddress">
+</div>
+<div>
+    <input type="text" name="eLatitude" placeholder="Entertaintment Latitude" [(ngModel)]="eLatitude">
+</div>
+<div>
+    <input type="text" name="eLongitude" placeholder="Entertaintment Longitude" [(ngModel)]="eLongitude">
+</div>
+<div>
+    <input type="text" name="eType" placeholder="Entertaintment Type" [(ngModel)]="eType">
+</div>
+<div>
+    Start Date
+</div>
+<div>
+    <input type="date" name="eStartDate" [(ngModel)]="eStartDate">
+</div>
+<div>
+    End Date
+</div>
+<div>
+    <input type="date" name="eEndDate" [(ngModel)]="eEndDate">
+</div>
+<div>
+    <input type="text" name="eDescription" placeholder="Entertaintment Description" [(ngModel)]="eDescription">
+</div>
+
+
+<div class="toolbar">
+	<ul class="tool-list">
+		<li class="tool">
+			<button 
+				type="button" 
+				data-command='justifyLeft'
+				class="tool--btn">
+				<i class=' fas fa-align-left'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('justifyCenter')"
+				class="tool--btn">
+				<i class=' fas fa-align-center'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('bold')"
+				class="tool--btn">
+				<i class=' fas fa-bold'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('italic')"
+				class="tool--btn">
+				<i class=' fas fa-italic'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+				type="button" 
+				(click) = "onClick('bold')"
+				class="tool--btn">
+				<i class=' fas fa-underline'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('insertOrderedList')"
+				class="tool--btn">
+				<i class=' fas fa-list-ol'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('insertUnorderedList')"
+				class="tool--btn">
+				<i class=' fas fa-list-ul'></i>
+			</button>
+		</li>
+		<li class="tool">
+			<button 
+                type="button" 
+                (click) = "onClick('createlink')"
+				class="tool--btn">
+				<i class=' fas fa-link'></i>
+			</button>
+		</li>
+	</ul>
+</div>
+
+<div id="output" contenteditable="true"></div>
+<div>
+    <input type="text" name="eT_C" placeholder="Entertaintment T&C" [(ngModel)]="eT_C">
+</div>
+
+<div>
+    <button (click)="insertData()">CREATE ENTERTAINMENT</button>
+</div>

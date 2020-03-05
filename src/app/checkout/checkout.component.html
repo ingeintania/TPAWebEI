@@ -1,0 +1,284 @@
+<div>
+  <div class="title">
+    <!-- <label for="" mat-raised-button (click)="closeDialog()"><</label> -->
+  </div>
+
+  <div class="formLogin">
+    <!-- <form action=""> -->
+      <div>
+        Hai
+        {{userData[0].user_firstname}} {{userData[0].user_lastname}}!
+      </div>
+      <div>
+        <h1>Checkout Page</h1>
+      </div>
+
+      <div class="subtitle">
+        Detail Pesanan
+      </div>
+      <hr>
+      <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" value="{{userData[0].user_firstname}} {{userData[0].user_lastname}}"
+      [(ngModel)]="name">
+      <div *ngIf="name != null">
+        <hr>
+      </div>
+      <input type="text" name="email" id="email" placeholder="Email" value="{{userData[0].user_email}}"
+      [(ngModel)]="email">
+      <div *ngIf="email != null">
+        <hr>
+      </div>
+      <input type="text" name="phone" id="phone" placeholder="Nomor Telepon" value="{{userData[0].user_phone}}"
+      [(ngModel)]="phone">
+      <div *ngIf="phone != null">
+        <hr>
+      </div>
+
+    <br>
+    <br>
+
+    <div class="subtitle">
+      Detail Penumpang
+    </div>
+    <hr>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                  Kuantitas Tiket
+              </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <input type="radio" value="1" [(ngModel)]="qty">1 Tiket
+          <input type="radio" value="2" [(ngModel)]="qty">2 Tiket
+          <input type="radio" value="3" [(ngModel)]="qty">3 Tiket
+      </mat-expansion-panel>
+  </mat-accordion>
+  <div *ngIf="qty != null">
+    <hr>
+  </div>
+  <br>
+
+
+      <div class="data-penumpang" *ngIf="qty == 1">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Titel
+                  </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <input type="radio" value="tuan" [(ngModel)]="title">Tuan
+              <input type="radio" value="nona" [(ngModel)]="title">Nona
+              <input type="radio" value="nyonya" [(ngModel)]="title">Nyonya
+          </mat-expansion-panel>
+      </mat-accordion>
+      <div *ngIf="title != null">
+        <hr>
+      </div>
+
+        <input type="text" name="nama2" id="nama2" placeholder="Nama Lengkap" [(ngModel)]="name2">
+        <div *ngIf="name2 != null">
+          <hr>
+        </div>
+
+
+        <mat-form-field>
+          <mat-label>Kewarganegaran</mat-label>
+          <mat-select [(ngModel)]="nationality">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div *ngIf="nationality != null">
+          <hr>
+        </div>
+      </div>
+
+
+      <div class="data-penumpang" *ngIf="qty == 2">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Titel
+                  </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <input type="radio" value="tuan" [(ngModel)]="title">Tuan
+              <input type="radio" value="nona" [(ngModel)]="title">Nona
+              <input type="radio" value="nyonya" [(ngModel)]="title">Nyonya
+          </mat-expansion-panel>
+      </mat-accordion>
+
+        <input type="text" name="nama2" id="nama2" placeholder="Nama Lengkap" [(ngModel)]="name2"
+        [(ngModel)]="email">
+        <mat-form-field>
+          <mat-label>Kewarganegaran</mat-label>
+          <mat-select [(ngModel)]="nationality">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Titel
+                  </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <input type="radio" value="tuan" [(ngModel)]="title">Tuan
+              <input type="radio" value="nona" [(ngModel)]="title">Nona
+              <input type="radio" value="nyonya" [(ngModel)]="title">Nyonya
+          </mat-expansion-panel>
+      </mat-accordion>
+
+        <input type="text" name="nama2" id="nama2" placeholder="Nama Lengkap" [(ngModel)]="name2"
+        [(ngModel)]="email">
+        <mat-form-field>
+          <mat-label>Kewarganegaran</mat-label>
+          <mat-select [(ngModel)]="nationality">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+
+
+      <div class="data-penumpang" *ngIf="qty == 3">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Titel
+                  </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <input type="radio" value="tuan" [(ngModel)]="title">Tuan
+              <input type="radio" value="nona" [(ngModel)]="title">Nona
+              <input type="radio" value="nyonya" [(ngModel)]="title">Nyonya
+          </mat-expansion-panel>
+      </mat-accordion>
+
+        <input type="text" name="nama2" id="nama2" placeholder="Nama Lengkap" [(ngModel)]="name2"
+        [(ngModel)]="email">
+        <mat-form-field>
+          <mat-label>Kewarganegaran</mat-label>
+          <mat-select [(ngModel)]="nationality">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Titel
+                  </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <input type="radio" value="tuan" [(ngModel)]="title">Tuan
+              <input type="radio" value="nona" [(ngModel)]="title">Nona
+              <input type="radio" value="nyonya" [(ngModel)]="title">Nyonya
+          </mat-expansion-panel>
+      </mat-accordion>
+
+        <input type="text" name="nama2" id="nama2" placeholder="Nama Lengkap" [(ngModel)]="name2"
+        [(ngModel)]="email">
+        <mat-form-field>
+          <mat-label>Kewarganegaran</mat-label>
+          <mat-select [(ngModel)]="nationality">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Titel
+                  </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <input type="radio" value="tuan" [(ngModel)]="title">Tuan
+              <input type="radio" value="nona" [(ngModel)]="title">Nona
+              <input type="radio" value="nyonya" [(ngModel)]="title">Nyonya
+          </mat-expansion-panel>
+      </mat-accordion>
+
+        <input type="text" name="nama2" id="nama2" placeholder="Nama Lengkap" [(ngModel)]="name2"
+        [(ngModel)]="email">
+        <mat-form-field>
+          <mat-label>Kewarganegaran</mat-label>
+          <mat-select [(ngModel)]="nationality">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+
+    <br>
+    <br>
+    <div>
+      Pembayaran
+    </div>
+    <hr>
+    <mat-form-field>
+      <mat-label>Metode Pembayaran</mat-label>
+      <mat-select [(ngModel)]="paymentMethod">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let country of paymentMethods" [value]="country">{{country}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="paymentMethod != null">
+      <hr>
+    </div>
+    <br>
+    <input type="text" name="promoCode" id="promoCode" placeholder="Kode Promo" [(ngModel)]="promoCode">
+    <div *ngIf="promoCode != null">
+      <hr>
+    </div>
+    <br>
+    <div>
+      {{aeroplaneData[0].aeroplane_company}}
+
+    </div>
+    <br>
+    <div>
+      {{aeroplaneData[0].aeroplane_type}}
+    </div>
+    <br>
+    <input type="text" name="price" id="price" placeholder="Harga" [(ngModel)]="price" value="{{aeroplaneData[0].aeroplane_price}}">
+    <div *ngIf="price != null">
+      <hr>
+    </div>
+    <br>
+    <br>
+
+    <button (click)="insertOrder()">SELESAI PEMBAYARAN</button>
+    <br>
+    <br>
+
+  </div>
+
+
+
+</div>

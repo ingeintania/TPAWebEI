@@ -1,3 +1,21 @@
+<div class="linear-background" *ngIf="loaded == false">
+
+</div>
+
+<div class="xxx" *ngIf="loaded == true">
+	<div class="thumb" *ngFor="let hotel of hotelData">
+		<mat-card class="example-card" *ngIf="hotel.hotel_id < 9">
+			<img mat-card-image src="{{hotel.hotel_image_path}}" alt="Photo of a Shiba Inu">
+			<mat-card-content>
+				<abbr title="{{hotel.hotel_name}}">
+					<p>
+						{{hotel.hotel_name}}
+					</p>
+				</abbr>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>
 
     <div class="feature">
         <div class="container">
@@ -32,7 +50,7 @@
                 </div>
                 <div class="list-image">
                     <div class="feature-image">
-                        <img alt="Simple Refund" src="https://www.tiket.com/home-ms/assets/7d1808db.svg">                    
+                        <img alt="Simple Refund" src="https://www.tiket.com/home-ms/assets/7d1808db.svg">
                     </div>
                     <div class="feature-info">
                         <p class="title">Simple Refund</p>
@@ -69,4 +87,4 @@
     <div class="as-simple-as-ticket"></div>
     <div class="easy-simple-installment"></div>
     <div class="partner-of-ticket"></div>
-    <a class="wa-chat" href="https://web.whatsapp.com/send?phone=628551500878&amp;text=Hi%2c%20tiket.com" target="_blank" rel="nofollow noopener noreferrer"><div class="wa-image-container"><img class="wa-image" src="https://www.tiket.com/home-ms/assets/4a376104.svg" alt="whatsapp-tiket"></div><span class="wa-text">Whatsapp</span></a>
+

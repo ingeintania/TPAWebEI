@@ -1,0 +1,75 @@
+<div class="hotel-detail-container">
+    <div class="hotel-image-container">
+        <div class="hotel-detail-home-photo">
+            <img src="{{hotel.hotel_image_path}}" alt="">
+        </div>
+        <div class="hotel-slider">
+            <div class="home-slider">
+                <div class="slick-slider">
+                    <div class="slick-list">
+                        <div class="slick-list-content">
+
+                            <img class="slider-image"
+                                src="https://static.tiket.photos/image/upload/v1574663476/tix-hotel/images-web/2019/11/25/9763ef6a-eb0c-4f54-898f-5f71ee14ca09-1574663474784-d41d8cd98f00b204e9800998ecf8427e.jpg"
+                                alt="Promo Hotel Internasional" (click)="openSlider()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="hotel-data-container">
+        <div>
+            <a [routerLink]="['']" routerLinkActive="router-link-active" >Home</a>
+            >
+            <a [routerLink]="['/hotel']" routerLinkActive="router-link-active" >Hotel</a>
+            >
+            <a [routerLink]="['/hotel', hotel.hotel_id]" routerLinkActive="router-link-active" >{{hotel.hotel_name}}</a>
+        </div>
+        <div>
+            {{hotel.hotel_name}}
+        </div>
+        <div>
+            Rating : {{hotel.hotel_rating_count}}
+        </div>
+        <div>
+            {{hotel.hotel_address}}
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <button [routerLink]="['/hotel']" routerLinkActive="router-link-active" >Tampilan List</button>
+        </div>
+        <div>
+            Share
+            <share-button button="facebook">Facebook</share-button>
+            <share-button button="copy">Copy Link</share-button>
+            <share-button button="email">Email</share-button>
+        </div>
+    </div>
+</div>
+<div class="thumb" *ngFor="let hotel of hotelData">
+  <mat-card>
+      <img mat-card-image src="{{hotel.hotel_image_path}}" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+
+              <p>
+                  {{hotel.hotel_name}}
+              </p>
+              <p>
+
+            </p>
+
+      </mat-card-content>
+
+  </mat-card>
+</div>
+<div class="map-container">
+  <div class="map-frame">
+      <div id="map"></div>
+  </div>
+</div>

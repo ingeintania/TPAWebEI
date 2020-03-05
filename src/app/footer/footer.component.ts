@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SubscriptionService } from '../service/subscription.service';
+import { Subscription } from '../model/Subscription';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  email:string
+  subscriptionData : Subscription[]
+
+  constructor(private service: SubscriptionService) { }
+
+  subscribeEmail(){
+    console.log(this.email)
+    this.service.insertsubscription(this.email).subscribe(async result=>{
+        this.subscriptionData=result
+
+      })
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,21 @@
+<div class="chat-container">
+    <div class="data-container" *ngFor="let message of messageLists">
+
+        <div class="data-container-image" *ngIf="message.includes('png')">
+            <input type="image" name="" id="" src="{{message}}"
+            (click)="openImage(message)">
+            <a href="{{ message }}" download>Download</a>
+        </div>
+        <div class="data-container-image" *ngIf="!message.includes('png')">
+          {{ message }}
+      </div>
+    </div>
+  </div>
+  <div>
+    <input type="text" [formControl]="messageControl" [(ngModel)]="a">
+    <button *ngIf="a != null" (click)="sendMessage()">Send</button>
+  </div>
+  <div>
+    <input type="file" [formControl]="fileControl" [(ngModel)]="b">
+    <button *ngIf="b != null" (click)="sendFile()">Send</button>
+  </div>

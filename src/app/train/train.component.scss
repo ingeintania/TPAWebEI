@@ -1,0 +1,247 @@
+.hotel-list{
+    .hotel-list-top{
+        padding: 2% 5% 2% 5%;
+        // position: fixed;
+        background-color: white;
+        z-index: 2000000;
+        // width: 100%;
+        .searchResult{
+            padding-bottom: 2%;
+            .searchResultContainer{
+                .product-form-search-group{
+                    display: flex;
+                    border-top: 1px solid lightgray;
+                    border-bottom: 1px solid lightgray;
+                    height: 100%;
+                    width: 100%;
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                    button{
+                        border-radius: 40px;
+                        background-color: yellow;
+                        width: 200px;
+                        height: 40px;
+                        border:none;
+                        margin-left: 5%;
+                    }
+                    .widget-date-input-group-container{
+                        margin-right: 3%;
+                        padding-left: 5%;
+                        .widget-input-container{
+                            .product-search-input-container{
+                                input{
+                                    border: none;
+                                    width:150%;
+                                    height:200%;
+                                    margin-top: 2%;
+                                }
+                                .custom-select{
+                                    margin-top: 2%;
+                                    #pkabin{
+                                        width: 100px;
+                                        height: 40px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-form-button-group{
+                    margin-top: 2%;
+                    margin-right: 5%;
+                    button{
+                        border-radius: 40px;
+                        background-color: yellow;
+                        // width: 200px;
+                        // height: 40px;
+                        border:none;
+                        float: right;
+                    }
+                }
+            }
+        }
+        .filterSearch{
+            display: flex;
+            .custom-select{
+                display: flex;
+                justify-content: flex-end;
+               select{
+                   padding:10%;
+               }
+            }
+        }
+    }
+    .hotel-list-container{
+        background-color: #F5F6FA;
+        padding: 2% 3% 2% 3%;
+        display: flex;
+        .hotel-list-container-left{
+            background-color: white;
+            padding:2%;
+            border-radius: 8px;
+            width: 20%;
+            .hotel-list-container-left-content{
+                padding:2%;
+                button{
+                    border-radius: 40px;
+                    background-color: yellow;
+                    width: 100%;
+                    height: 5vw;
+                    border:none;
+
+                }
+                div{
+                    span{
+                        font-size: 10px;
+                        padding-right: 20%;
+                    }
+                }
+            }
+
+
+        }
+        .hotel-list-container-right{
+            margin-left: 2%;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+            .hotel-filter-container{
+                display: flex;
+                justify-content: flex-end;
+                .dropdown{
+                    display: inline-block;
+                    position: relative;
+                    &:hover .dropdown-content{
+                        display: block;
+                    }
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: white;
+                        min-width: 150px;
+                        z-index: 1;
+                        margin: 2%;
+                        a{
+                            color: black;
+                            text-decoration: none;
+                            display: block;
+                            font-size: 15px;
+                            padding: 2%;
+                        }
+                    }
+                    label.header-username-item{
+                        background-color:rgba(0, 0, 0, 0);
+                        border-bottom-left-radius:14px;
+                        border-bottom-right-radius:14px;
+                        border-top-left-radius:14px;
+                        border-top-right-radius:14px;
+                        box-shadow:rgba(53, 64, 90, 0.2) 0px 2px 8px 0px;
+                        box-sizing:border-box;
+                        cursor:pointer;
+                        display:inline-block;
+                        font-family:OpenSans-SemiBold;
+                        font-size:14px;
+                        line-height:21px;
+                        margin-left:16px;
+                        outline-style:none;
+                        outline-width:0px;
+                        padding-bottom:4px;
+                        padding-left:12px;
+                        padding-right:12px;
+                        padding-top:4px;
+                        position:relative;
+                        text-decoration-line:none;
+                        text-decoration-style:solid;
+                        z-index:200;
+                    }
+
+                }
+            }
+            .hotel-data-container{
+                margin-top: 2%;
+                background-color: white;
+                border-radius: 8px;
+                .hotel-data{
+                    padding:2%;
+                    display: flex;
+                    .data-detail{
+
+                        .ddt{
+                            // justify-content: center;
+                            // text-align: center;
+                            width: 15vw;
+                            height: 2vw;
+                            abbr{
+                              text-decoration: none;
+                            }
+                        }
+                        .ddc{
+                            justify-content: center;
+                            text-align: center;
+                            width: 10vw;
+                            height: 2vw;
+                        }
+                        .ddp{
+                            justify-content: right;
+                            text-align: right;
+                            width: 15vw;
+                            height: 2vw;
+                        }
+                        .detail1{
+                            justify-content: flex-start;
+                            text-align: center;
+                            width: 30vw;
+                            height: 2vw;
+                            display: inline-block;
+                            position: relative;
+                            &:hover .dropdown-content{
+                                display: block;
+                            }
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+                                background-color: white;
+                                min-width: 90px;
+                                z-index: 1;
+                                a{
+                                    color: black;
+                                    text-decoration: none;
+                                    display: block;
+                                    font-size: 15px;
+                                    margin: 1%;
+                                }
+                            }
+                        }
+                        .detail2{
+                            justify-content: flex-end;
+                            text-align: center;
+
+                            width: 30vw;
+                            height: 2vw;
+                        }
+
+                    }
+                    img{
+                        height: 240px;
+                        width: 320px;
+                        border-radius: 8px;
+                    }
+                    .hotel-data-content{
+                        padding-left: 2%;
+                        display: flex;
+                        flex-direction: row;
+                        a{
+                            font-size: 25px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+}

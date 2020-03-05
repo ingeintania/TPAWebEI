@@ -1,0 +1,60 @@
+<!-- <p>entertainmentdetail works!</p> -->
+<div class="promo-page">
+  <div class="slick-slider">
+    <div class="slick-list">
+        <div class="slick-list-content">
+            <img src="{{entertainment.entertainment_image_path2}}" alt="">
+            <img src="{{entertainment.entertainment_image_path3}}" alt="">
+            <img src="{{entertainment.entertainment_image_path4}}" alt="">
+            <img src="{{entertainment.entertainment_image_path5}}" alt="">
+        </div>
+    </div>
+</div>
+  <div class="image-container">
+      <img mat-card-image src="{{entertainment.entertainment_image_path1}}" alt="">
+  </div>
+  <div class="promo-container">
+      <div class="promo-detail-container">
+        <mat-card-content class="content">
+          <a [routerLink]="['']" routerLinkActive="router-link-active" >Home </a>
+          >
+          <a [routerLink]="['/entertainment']" routerLinkActive="router-link-active" >Entertainment </a>
+          >
+          <a [routerLink]="['/entertainment', entertainment.entertainment_id]" routerLinkActive="router-link-active" >{{entertainment.entertainment_name}}</a>
+        </mat-card-content>
+          <mat-card-content class="content">
+              <h1>{{entertainment.entertainment_name}}</h1>
+          </mat-card-content>
+
+          <mat-card-content class="content">
+              {{entertainment.entertainment_address}}
+          </mat-card-content>
+          <br>
+          <mat-card-content class="content">
+            Rp{{entertainment.entertainment_price}},-
+          </mat-card-content>
+          <br>
+          <mat-card-content class="content">
+            <button [routerLink]="['/event-order']" routerLinkActive="router-link-active" >ORDER NOW</button>
+          </mat-card-content>
+
+          <br>
+          <mat-card-content class="content">
+            <div>Description</div>
+            {{entertainment.entertainment_description}}
+          </mat-card-content>
+          <mat-card-content class="content">
+            <div>Terms & Conditions</div>
+            {{entertainment.entertainment_t_c}}
+          </mat-card-content>
+      </div>
+      <div class="other-promo">
+
+      </div>
+  </div>
+</div>
+<div class="map-container">
+  <div class="map-frame">
+      <div id="map"></div>
+  </div>
+</div>

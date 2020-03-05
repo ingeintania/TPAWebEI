@@ -1,0 +1,139 @@
+<div class="mat" *ngIf="loaded == false">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="hotel-list-container" *ngIf="loaded == true">
+    <div class="hotel-list-container-left">
+        <!-- <div class="hotel-list-container-left-content">
+            Category
+        </div>
+        <div class="hotel-list-container-left-content">
+            <div>
+                <input type="radio" value="acivities" name="rbCategory"
+                [(ngModel)]="category">
+                <span>Acivities</span>
+            </div>
+            <div>
+                <input type="radio" value="attractions" name="rbCategory"
+                [(ngModel)]="category">
+                <span>Attractions</span>
+            </div>
+            <div>
+                <input type="radio" value="events" name="rbCategory"
+                [(ngModel)]="category">
+                <span>Events</span>
+            </div>
+        </div>
+        <div class="hotel-list-container-left-content">
+            Price
+        </div>
+        <div class="hotel-list-container-left-content">
+            <input type="range" name="rangeInput" min="100000" max="10000000" [(ngModel)]="price">
+            <div>
+                <span>Rp100.000,-</span>
+                <span>Rp10.000.000,-</span>
+            </div>
+        </div>
+        <div class="hotel-list-container-left-content">
+            Date
+        </div>
+        <div class="hotel-list-container-left-content">
+            <div>
+                <input type="date" name="dtEnd"
+                [(ngModel)]="end_date">
+            </div>
+        </div>
+        <br>
+        <hr> -->
+        <div class="hotel-list-container-left-content">
+            <button (click)="openCreate()" >CREATE BLOG</button>
+        </div>
+
+    </div>
+    <div class="hotel-list-container-right">
+        <!-- <div class="hotel-filter-container">
+            <div class="dropdown">
+                <select id="pkabin">
+                    <option value="0">1 Tamu, 1 Kamar</option>
+                    <option value="1">2 Tamu, 1 Kamar</option>
+                    <option value="2">2 Tamu, 2 Kamar</option>
+                    <option value="3">3 Tamu, 3 Kamar</option>
+                  </select>
+            </div>
+        </div> -->
+        <div class="hotel-data-container">
+			<h1>
+				MANAGE BLOG
+			</h1>
+		</div>
+        <!-- <div class="hotel-data-container">
+            <div class="hotel-data" *ngFor="let blog of blogData; let i = index" [attr.data-index]="i">
+
+                <img src="{{blog.blog_image_path}}" alt="">
+                <div class="hotel-data-content">
+
+                    <a [routerLink]="['/blog-detail']" routerLinkActive="router-link-active"  class="hotel_name">
+                        {{blog.blog_title}}
+					</a>
+					<div>
+                        {{blog.blog_category}}
+                    </div>
+                    <div>
+                        {{blog.blog_content}}
+                    </div>
+                    <div>
+                        <button (click)="openUpdate(blog)">UPDATE</button>
+                        <button (click)="openDelete(blog)">DELETE</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<div class="mat-elevation-z8" >
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Cari data..">
+  </mat-form-field>
+	<table mat-table [dataSource]="dataSource" *ngIf="loaded == true">
+
+	  <!-- Position Column -->
+	  <ng-container matColumnDef="image">
+		<th mat-header-cell *matHeaderCellDef> Image </th>
+		<td mat-cell *matCellDef="let blog"> <img src="{{blog.image}}" alt="" style="width: 80%;"> </td>
+	  </ng-container>
+
+	  <!-- Name Column -->
+	  <ng-container matColumnDef="title">
+		<th mat-header-cell *matHeaderCellDef> Title </th>
+		<td mat-cell *matCellDef="let blog"> {{blog.title}} </td>
+	  </ng-container>
+
+	  <!-- Weight Column -->
+	  <ng-container matColumnDef="category">
+		<th mat-header-cell *matHeaderCellDef> Category </th>
+		<td mat-cell *matCellDef="let blog"> {{blog.category}} </td>
+	  </ng-container>
+
+	  <!-- Symbol Column -->
+	  <ng-container matColumnDef="content">
+		<th mat-header-cell *matHeaderCellDef> Content </th>
+		<td mat-cell *matCellDef="let blog"> {{blog.content}}
+		</td>
+	  </ng-container>
+
+	  <ng-container matColumnDef="button">
+		<th mat-header-cell *matHeaderCellDef></th>
+		<td mat-cell *matCellDef="let blog">
+			<button (click)="openUpdate(blog)">UPDATE</button>
+            <button (click)="openDelete(blog)">DELETE</button>
+		</td>
+	  </ng-container>
+
+	  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+
+	<mat-paginator [pageSizeOptions]="[3]" showFirstLastButtons></mat-paginator>
+  </div>

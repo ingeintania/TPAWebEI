@@ -1,0 +1,54 @@
+<div class="myaccount">
+    <div class="title">
+        <div class="main-title">Detail Akun</div>
+        <div class="subtitle">Di sini kamu bisa mengatur detail akunmu.</div>
+    </div>
+    <div class="myaccount-container">
+        <div class="myaccount-container-left">
+            <div class="myprofile-title">Email</div>
+            <input type="text" id="email" [(ngModel)]="email" value="{{userData[0].user_email}}">
+            <div class="myprofile-title">Nomor Ponsel</div>
+            +62<input type="text" id="phone" [(ngModel)]="phone" value="{{userData[0].user_phone}}">
+            <div class="myprofile-title">Bahasa</div>
+            <input type="text" id="language" [(ngModel)]="language" value="{{userData[0].user_language}}">
+            <span>
+              <div id="google_translate_element"></div>
+            </span>
+        </div>
+        <div class="myaccount-container-right">
+            <div class="myaccount-container-right-title">Titel</div>
+            <!-- <div *ngIf="userData[0].user_gender =='male' "> -->
+              <input *ngIf="userData[0].user_gender =='male' " type="text" id="titel" value="Tuan">
+            <!-- </div> -->
+            <!-- <div *ngIf="userData[0].user_gender =='female' "> -->
+              <input *ngIf="userData[0].user_gender =='female' " type="text" id="titel" value="Nona">
+            <!-- </div> -->
+            <div class="myaccount-container-right-title">Nama depan</div>
+            <input type="text" id="firstname" [(ngModel)]="firstname" value="{{userData[0].user_firstname}}">
+            <div class="myaccount-container-right-title">Nama belakang</div>
+            <input type="text" id="lastname" [(ngModel)]="lastname" value="{{userData[0].user_lastname}}">
+            <div>Alamat Pengiriman Reward TIX (Opsional)</div>
+            <div class="myaccount-container-right-title">Kota</div>
+            <input type="text" id="city" [(ngModel)]="city" value="{{userData[0].user_city}}">
+            <div class="myprofile-title" >Alamat</div>
+            <input type="text" id="address" [(ngModel)]="address" value="{{userData[0].user_address}}" (keyup)="validateField()">
+            <div class="myprofile-title">Kode Pos</div>
+            <input type="text" id="pos_code" [(ngModel)]="post_code" value="{{userData[0].user_post_code}}">
+            <button type="submit" (click)="updateData()">SIMPAN</button>
+        </div>
+    </div>
+    <div class="myaccount-bottom">
+      <div class="title">
+        Akun yang terhubung
+      </div>
+      <div class="subtitle">
+        Hubungkan Sosial Media Anda untuk login super cepat
+      </div>
+      <div>
+        <app-googlesignin></app-googlesignin>
+      </div>
+      <div>
+        <app-facebooksignin></app-facebooksignin>
+      </div>
+    </div>
+</div>
