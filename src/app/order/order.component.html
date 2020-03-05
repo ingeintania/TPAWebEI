@@ -1,1 +1,68 @@
-<p>order works!</p>
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              Payment Method
+          </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <input type="radio" value="bca" [(ngModel)]="tipe">BCA
+      <input type="radio" value="ovo" [(ngModel)]="tipe">OVO
+      <input type="radio" value="indomaret" [(ngModel)]="tipe">Indomaret
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              Urutkan berdasarkan
+          </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <input type="radio" value="price" [(ngModel)]="sorted">Rating
+      <input type="radio" value="name" [(ngModel)]="sorted">Harga
+  </mat-expansion-panel>
+</mat-accordion>
+
+<button (click)="resetData()">RESET</button>
+
+
+
+<div *ngFor="let item of orderData|order:tipe:sorted">
+
+  <div>
+    {{item.user_name}}
+  </div>
+  <div>
+    {{item.user_email}}
+  </div>
+  <div>
+    {{item.user_phone}}
+  </div>
+  <div>
+    {{item.ticket_quantity}}
+  </div>
+  <div>
+    {{item.ticket_title}}
+  </div>
+  <div>
+    {{item.ticket_name}}
+  </div>
+  <div>
+    {{item.ticket_nationality}}
+  </div>
+  <div>
+    {{item.order_payment_method}}
+  </div>
+  <div>
+    {{item.order_promo_code}}
+  </div>
+  <div>
+    {{item.order_price}}
+  </div>
+
+</div>

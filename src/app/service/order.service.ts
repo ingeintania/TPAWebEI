@@ -12,6 +12,31 @@ export class OrderService {
 
   constructor(private apollo: Apollo) { }
 
+  getOrder(): Observable<Order[]>{
+    return this.apollo.query<any>({
+      query: gql`
+      query{
+        orders{
+          order_id,
+                user_name,
+                user_email,
+                user_phone,
+                ticket_quantity,
+                ticket_title,
+                ticket_name,
+                ticket_nationality,
+                order_payment_method,
+                order_promo_code,
+                order_price
+        }
+      }
+      `,
+      fetchPolicy:'no-cache'
+    }).pipe(map(
+      result => result.data.orders
+    ))
+  }
+
   createorder(
     uname:String,
     uemail:String,

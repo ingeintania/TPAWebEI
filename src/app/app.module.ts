@@ -81,6 +81,7 @@ import { SlidermodalComponent } from './hoteldetail/slidermodal/slidermodal.comp
 import { AdminComponent } from './admin/admin/admin.component';
 import { ChatForumComponent } from './chat-forum/chat-forum.component';
 import { EventOrderComponent } from './event-order/event-order.component';
+import { OrderPipe } from './order/order.pipe';
 
 // import {CustomMaterialModule} from "./material.module";
 // import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -157,7 +158,8 @@ import { EventOrderComponent } from './event-order/event-order.component';
     SlidermodalComponent,
     AdminComponent,
     ChatForumComponent,
-    EventOrderComponent
+    EventOrderComponent,
+    OrderPipe
   ],
   entryComponents: [
     LoginmodalComponent,
